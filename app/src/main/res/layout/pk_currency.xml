@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView android:gravity="center"
+    android:layout_marginRight="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_weight="1"
+    style="@style/text_regular"
+    android:textColor="@color/grey_700"
+    android:id="@+id/currency_txt"
+    android:textSize="@dimen/text_size_small"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android" />

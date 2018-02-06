@@ -1,0 +1,263 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/app_yellow_1</item>
+
+        <item name="dropDownListViewStyle">@style/bank_account_spinner_style</item>
+        <item name="android:layoutDirection">rtl</item>
+    </style>
+
+    <style name="AppTheme.NoBar" parent="AppTheme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="external_ac_theme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/app_dark_indigo</item>
+    </style>
+
+
+    <style name="file_picker_theme" parent="Theme.AppCompat.Light">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/app_dark_indigo</item>
+    </style>
+    
+    <style name="edittext_style" parent="text_light">
+        <item name="android:background">@drawable/edittext_selector</item>
+        <item name="android:textSize">@dimen/text_size_xsmall</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:layout_marginTop">@dimen/edittext_vert_margin</item>
+        <item name="android:layout_marginBottom">@dimen/edittext_vert_margin</item>
+        <item name="android:textCursorDrawable">@drawable/cursor_drawable</item>
+        <item name="android:gravity">right</item>
+    </style>
+
+    <style name="primary_text_view_style" parent="text_bold">
+        <item name="android:textColor">@color/app_grey_1</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="primary_text_view_style_mid" parent="text_medium">
+        <item name="android:textColor">@color/app_grey_1</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="secondary_text_view_style">
+        <item name="android:textColor">@color/grey_500</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="bottom_full_width_button_layout_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:background">@color/app_grey_1</item>
+    </style>
+
+    <style name="bottom_full_width_button_text_style" parent="text_bold">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="social_login_button_layout_style">
+        <item name="android:layout_marginStart">4dp</item>
+        <item name="android:layout_marginEnd">4dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="social_login_button_image_style">
+
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">20dp</item>
+        <item name="android:layout_height">20dp</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="fragment_layout_container_style">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:layout_weight">8</item>
+        <item name="android:paddingTop">16dp</item>
+        <item name="android:paddingBottom">16dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="accent_rounded_layout_style">
+        <item name="corner_radius">28dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/accent_rounded_button_background</item>
+    </style>
+    <style name="dark_indigo" parent="accent_rounded_layout_style">
+
+        <item name="android:background">@drawable/inigo_rounded_button_background</item>
+    </style>
+
+
+
+    <style name="accent_rounded_button_layout_style" parent="accent_rounded_layout_style">
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+    </style>
+
+
+    
+    <style name="bank_account_spinner_style" parent="@style/Widget.AppCompat.ListView.DropDown">
+        <item name="android:divider">@drawable/spinner_divider</item>
+    </style>
+
+    <style name="activity_toolbar_title" parent="text_bold">
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/app_grey_1</item>
+    </style>
+
+    <style name="AppTheme.FullScreen" parent="AppTheme.NoBar">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="text_bold">
+        <item name="fontPath">fonts/Changa-Bold.ttf</item>
+    </style>
+
+    <style name="text_semi_bold">
+        <item name="fontPath">fonts/Changa-SemiBold.ttf</item>
+    </style>
+
+    <style name="text_extra_bold">
+        <item name="fontPath">fonts/Changa-ExtraBold.ttf</item>
+    </style>
+
+    <style name="text_medium">
+        <item name="fontPath">fonts/Changa-Medium.ttf</item>
+    </style>
+
+    <style name="text_light">
+        <item name="fontPath">fonts/Changa-Light.ttf</item>
+    </style>
+    <style name="text_regular">
+        <item name="fontPath">fonts/Changa-Regular.ttf</item>
+    </style>
+
+    <style name="recycler_view">
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="fragment_background">
+        <item name="android:background">@color/white</item>
+        <item name="android:clipToPadding">false</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <style name="small_err_textview_style" parent="text_regular">
+        <item name="android:visibility"> gone</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="android:textColor">@color/red_A700</item>
+        <item name="android:textSize" > @dimen/text_size_small</item>
+
+    </style>
+    <style name="custom_image_edittext_compound_imageview">
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_width">24dp</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:layout_marginBottom">16dp</item>
+        <item name="android:layout_marginStart">6dp</item>
+        <item name="android:tint">@color/app_yellow_1</item>
+        <item name="android:layout_gravity">bottom|start</item>
+    </style>
+
+    <style name="custom_image_edittext_compound_edittext" parent="edittext_style">
+        <item name="android:maxLines">1</item>
+        <item name="android:imeOptions">actionNext</item>
+        <item name="android:inputType">text</item>
+        <item name="android:paddingStart">32dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="custom_image_edittext_compound_layout">
+        <item name="android:direction">right_to_left</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginBottom">4dp</item>
+    </style>
+
+    <style name="contact_us_social_image_view">
+        <item name="android:layout_width">32dp</item>
+        <item name="android:layout_height">32dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+    </style>
+
+
+
+    <style name="day_summary_table_text_view" parent="text_regular">
+        <item name="android:textColor">@color/app_blue_grey</item>
+        <item name="android:gravity">center</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingStart">2dp</item>
+        <item name="android:paddingEnd">2dp</item>
+        <item name="android:textSize">@dimen/text_size_xsmall</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+
+    <style name="confirm_rounded_button_layout_style">
+        <item name="corner_radius">28dp</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginStart">24dp</item>
+        <item name="android:layout_marginEnd">24dp</item>
+        <item name="android:background">@drawable/rounded_button_background</item>
+    </style>
+
+
+
+    <style name="money_item_title_text" parent="text_regular">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/app_blue_grey</item>
+        <item name="android:textSize">@dimen/text_size_xsmall</item>
+    </style>
+
+    <style name="money_item_info_text" parent="text_medium">
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/app_blue_grey</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+    </style>
+
+    <style name="yellow_date_item_text" parent="text_bold">
+        <item name="android:textColor">@color/app_blue_grey</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
+        <item name="android:gravity">center</item>
+        <item name="corner_radius">4dp</item>
+    </style>
+
+    <style name="money_item_layout">
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+</resources>

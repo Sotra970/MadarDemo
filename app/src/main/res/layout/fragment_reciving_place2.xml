@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView android:background="@color/white"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:background="@color/grey_50"
+            android:layout_weight="0.6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/receiving_place_2_map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"/>
+            />
+        </FrameLayout>
+        <LinearLayout
+            android:layout_weight="0.4"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <android.support.v7.widget.CardView
+                android:layout_weight="1"
+                app:cardBackgroundColor="@color/white"
+                app:cardElevation="4dp"
+                app:cardCornerRadius="6dp"
+                app:cardUseCompatPadding="true"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_margin="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:text="@string/driver_extra_info"
+                        android:textColor="@color/black"
+                        style="@style/text_semi_bold"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <LinearLayout
+                        android:layout_weight="0.4"
+                        android:orientation="vertical"
+                        android:layout_marginRight="16dp"
+                        android:layout_marginLeft="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                            <FrameLayout
+
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/custom_image_edittext_compound_layout"
+                                >
+
+                                <ImageView
+                                    style="@style/custom_image_edittext_compound_imageview"
+                                    android:src="@drawable/home_icon"
+                                    />
+
+                                <EditText
+                                    android:maxLines="4"
+                                    android:id="@+id/driver_extra_info_input"
+                                    style="@style/custom_image_edittext_compound_edittext"
+                                    android:hint="@string/driver_extra_info_hint"
+                                    android:imeOptions="actionDone"
+                                    android:layout_height="wrap_content"
+                                    />
+                            </FrameLayout>
+
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_weight="0.6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <LinearLayout
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <android.support.v7.widget.AppCompatRadioButton
+                                    android:scaleX="0.8"
+                                    android:scaleY="0.8"
+                                    android:clickable="false"
+                                    android:id="@+id/call_me_radio"
+                                    android:layout_gravity="center"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" />
+                            <View
+                                android:id="@+id/call_me_radio_con"
+                                android:layout_width="36dp"
+                                android:layout_height="36dp"/>
+                            </FrameLayout>
+                            <TextView
+                                android:layout_gravity="center"
+                                android:text="@string/call_me_5_min_before"
+                                android:textColor="@color/black"
+                                style="@style/text_semi_bold"
+                                android:textSize="@dimen/text_size_small"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                        <LinearLayout
+                            android:layout_marginTop="16dp"
+                            android:orientation="horizontal"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <FrameLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                            <android.support.v7.widget.AppCompatRadioButton
+                                android:scaleX="0.8"
+                                android:scaleY="0.8"
+                                android:clickable="false"
+                                android:id="@+id/collect_the_package_button"
+                                android:layout_gravity="center"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                                <View
+                                    android:id="@+id/collect_the_package_button_con"
+                                    android:layout_width="36dp"
+                                    android:layout_height="36dp"/>
+                            </FrameLayout>
+
+                            <TextView
+                                android:layout_gravity="center"
+                                android:text="@string/collect_the_package"
+                                android:textColor="@color/black"
+                                style="@style/text_semi_bold"
+                                android:textSize="@dimen/text_size_small"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+
+
+                <include layout="@layout/pager_bullet_view"/>
+
+            <LinearLayout
+                android:layout_marginBottom="16dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:elevation="1dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/dark_indigo"
+                    android:id="@+id/cancel"
+                    >
+                    <TextView
+                        android:textColor="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/primary_text_view_style"
+                        android:text="@string/back"
+                        />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/accent_rounded_layout_style"
+                    android:id="@+id/next"
+                    >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/primary_text_view_style"
+                        android:text="@string/next"
+                        />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/progressView"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+
+
+</android.support.v7.widget.CardView>

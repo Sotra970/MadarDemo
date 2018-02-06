@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="24dp"
+    android:layout_marginBottom="24dp"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <FrameLayout
+            android:id="@+id/fb_sing_in_img"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/f_sign_grad"
+            style="@style/social_login_button_layout_style"
+            >
+
+            <com.facebook.login.widget.LoginButton
+                android:visibility="gone"
+                android:id="@+id/fb_login_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="30dp" />
+
+            <ImageView
+                style="@style/social_login_button_image_style"
+                android:src="@drawable/facebook_f"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/twitter_sing_in_img"
+            style="@style/social_login_button_layout_style"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/t_sign_grad"
+            >
+
+            <com.twitter.sdk.android.core.identity.TwitterLoginButton
+                android:visibility="gone"
+                android:id="@+id/twitter_login_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                style="@style/social_login_button_image_style"
+                android:src="@drawable/twitter_bird" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/google_sing_in_img"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/g_sign_grad"
+            style="@style/social_login_button_layout_style"
+            >
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/google_sign_in"
+                android:visibility="gone"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"/>
+
+            <ImageView
+                style="@style/social_login_button_image_style"
+                android:src="@drawable/google_g_plus"
+                />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

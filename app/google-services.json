@@ -1,0 +1,143 @@
+{
+  "project_info": {
+    "project_number": "429187776856",
+    "firebase_url": "https://madarex-3b591.firebaseio.com",
+    "project_id": "madarex-3b591",
+    "storage_bucket": "madarex-3b591.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429187776856:android:3972b23de090bc6c",
+        "android_client_info": {
+          "package_name": "com.madarex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429187776856-6j949bagkiob39th23bjvr131knitbua.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.madarex",
+            "certificate_hash": "b7edb4419d386ee6a9794031740b7aa814380028"
+          }
+        },
+        {
+          "client_id": "429187776856-24ocv6ii1r4npvh9tij663udj9anf37o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3JXjqGEuLkm16x5BbvLMEjRpxKvxoKq0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "429187776856-24ocv6ii1r4npvh9tij663udj9anf37o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429187776856:android:b5b257a0fc09369f",
+        "android_client_info": {
+          "package_name": "com.madarexdriver"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429187776856-1vn5n4miafjoua50mh01et3bd2merit3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.madarexdriver",
+            "certificate_hash": "b7edb4419d386ee6a9794031740b7aa814380028"
+          }
+        },
+        {
+          "client_id": "429187776856-24ocv6ii1r4npvh9tij663udj9anf37o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3JXjqGEuLkm16x5BbvLMEjRpxKvxoKq0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "429187776856-24ocv6ii1r4npvh9tij663udj9anf37o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:429187776856:android:048566d4b3bbb11c",
+        "android_client_info": {
+          "package_name": "com.madarex2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "429187776856-kuktulgn2f30cf5v3eui35c14b681sv3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.madarex2",
+            "certificate_hash": "219d60e85e62f0602270a31c9d3233d703d05bd0"
+          }
+        },
+        {
+          "client_id": "429187776856-24ocv6ii1r4npvh9tij663udj9anf37o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB3JXjqGEuLkm16x5BbvLMEjRpxKvxoKq0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "429187776856-24ocv6ii1r4npvh9tij663udj9anf37o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

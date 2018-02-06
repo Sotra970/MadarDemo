@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+        <include layout="@layout/yellow_image_background"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="top|center_horizontal"
+                android:gravity="center"
+                android:id="@+id/fragment_main_background_contents">
+
+                <ImageView
+                    android:layout_width="175dp"
+                    android:layout_height="175dp"
+                    android:src="@drawable/madar_logo"
+                    android:layout_gravity="center"
+                    android:id="@+id/fragment_main_logo"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/fragment_main_text_view"
+                    android:text="@string/text_for_shipment_and_delivery"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textColor="@color/black"
+                    style="@style/text_bold"
+                    android:visibility="visible"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:orientation="vertical"
+                android:background="@color/transparent"
+                android:id="@+id/fragment_main_button_container"
+                android:visibility="visible">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/splash_layer"
+                    android:scaleType="fitXY"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="center"
+                    android:background="@color/white"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    >
+
+                    <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                        style="@style/accent_rounded_button_layout_style"
+                        android:id="@+id/fragment_main_sign_in_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_login"
+                            style="@style/text_medium"
+                            android:textSize="@dimen/text_size_large"
+                            android:textColor="@color/app_grey_1"
+                            />
+
+                    </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+                    <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                        style="@style/accent_rounded_button_layout_style"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/fragment_main_sign_up_button"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_sign_up"
+                            style="@style/text_medium"
+                            android:textSize="@dimen/text_size_large"
+                            android:textColor="@color/app_grey_1"
+                            />
+
+                    </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+</LinearLayout>

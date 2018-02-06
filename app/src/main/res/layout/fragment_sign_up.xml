@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:background="@color/white"
+        android:layoutDirection="rtl"
+        >
+
+        <ScrollView
+                android:fillViewport="true"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"        >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    />
+
+                <LinearLayout
+                    style="@style/fragment_layout_container_style"
+                    >
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_create_new_account"
+                        style="@style/primary_text_view_style"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_create_new_account_hint"
+                        style="@style/secondary_text_view_style"
+                        android:gravity="center"
+                        />
+
+
+                    <include layout="@layout/social_login"/>
+
+
+                    <FrameLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/custom_image_edittext_compound_layout"
+                        >
+
+                        <ImageView
+                            style="@style/custom_image_edittext_compound_imageview"
+                            android:src="@drawable/store"
+                            />
+
+                        <EditText
+                            android:maxLines="1"
+                            android:id="@+id/store_name_input"
+                            style="@style/custom_image_edittext_compound_edittext"
+                            android:hint="@string/hint_store_title"
+                            />
+
+                    </FrameLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="4dp"
+                            >
+
+                            <FrameLayout android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/custom_image_edittext_compound_layout"
+                                >
+
+                                <ImageView
+                                    style="@style/custom_image_edittext_compound_imageview"
+                                    android:src="@drawable/profile_user_black"
+                                    />
+
+                                <EditText
+                                    android:maxLines="1"
+                                    android:id="@+id/first_name_input"
+                                    style="@style/custom_image_edittext_compound_edittext"
+                                    android:hint="@string/hint_first_name"                            />
+
+                            </FrameLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="4dp">
+
+                            <FrameLayout android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                style="@style/custom_image_edittext_compound_layout"
+                                >
+
+                                <ImageView
+                                    style="@style/custom_image_edittext_compound_imageview"
+                                    android:src="@drawable/profile_user_black"
+                                    />
+
+                                <EditText
+                                    android:maxLines="1"
+                                    android:id="@+id/family_name_input"
+                                    style="@style/custom_image_edittext_compound_edittext"
+                                    android:hint="@string/hint_last_name"/>
+
+                            </FrameLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <FrameLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/custom_image_edittext_compound_layout"
+                        >
+
+                        <ImageView
+                            style="@style/custom_image_edittext_compound_imageview"
+                            android:src="@drawable/old_mobile_phone"
+                            />
+
+                        <EditText
+                            android:maxLines="1"
+                            android:inputType="number"
+                            android:id="@+id/phone_number_input"
+                            style="@style/custom_image_edittext_compound_edittext"
+                            android:hint="@string/hint_phone_number"
+                            />
+
+                    </FrameLayout>
+
+
+
+                    <FrameLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/custom_image_edittext_compound_layout"
+                        >
+
+                        <ImageView
+                            style="@style/custom_image_edittext_compound_imageview"
+                            android:src="@drawable/at"
+                            />
+
+                        <EditText
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:id="@+id/email_input"
+                            style="@style/custom_image_edittext_compound_edittext"
+                            android:hint="@string/hint_email"
+                            />
+
+                    </FrameLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="4dp"
+                            >
+
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                style="@style/custom_image_edittext_compound_layout"
+                                >
+
+                                <ImageView
+                                    style="@style/custom_image_edittext_compound_imageview"
+                                    android:src="@drawable/home_icon"
+                                    />
+
+
+
+                                <LinearLayout
+                                    android:paddingBottom="8dp"
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <Spinner
+                                        android:id="@+id/country_spiner"
+                                        android:layout_weight="1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@android:color/transparent"
+                                        android:clickable="true"
+                                        android:paddingEnd="24dp"
+                                        android:paddingStart="24dp"
+                                        android:spinnerMode="dialog" />
+                                    <View
+                                        android:background="@color/grey_400"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="2dp"/>
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:src="@drawable/ic_arrow_drop_down_black_24dp"
+                                    android:layout_gravity="bottom|end"
+                                    android:padding="0dp"
+                                    style="@style/custom_image_edittext_compound_imageview"/>
+
+
+
+                            </FrameLayout>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="4dp"
+                            >
+                            <FrameLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                style="@style/custom_image_edittext_compound_layout"
+                                >
+
+                                <ImageView
+                                    style="@style/custom_image_edittext_compound_imageview"
+                                    android:src="@drawable/home_icon"
+                                    />
+
+
+
+                                <LinearLayout
+                                    android:paddingBottom="8dp"
+                                    android:orientation="vertical"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <Spinner
+                                        android:id="@+id/city_spiner"
+                                        android:layout_weight="1"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:background="@android:color/transparent"
+                                        android:clickable="true"
+                                        android:paddingEnd="24dp"
+                                        android:paddingStart="24dp"
+                                        android:spinnerMode="dialog" />
+                                    <View
+                                        android:background="@color/grey_400"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="2dp"/>
+                                </LinearLayout>
+
+                                <ImageView
+                                    android:src="@drawable/ic_arrow_drop_down_black_24dp"
+                                    android:layout_gravity="bottom|end"
+                                    android:padding="0dp"
+                                    style="@style/custom_image_edittext_compound_imageview"/>
+
+
+
+                            </FrameLayout>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <FrameLayout android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/custom_image_edittext_compound_layout"
+                        >
+
+
+                        <ImageView
+                            style="@style/custom_image_edittext_compound_imageview"
+                            android:src="@drawable/lock"
+                            />
+
+                        <EditText
+                            android:maxLines="1"
+                            android:inputType="textPassword"
+                            style="@style/custom_image_edittext_compound_edittext"
+                            android:hint="@string/hint_password"
+                            android:id="@+id/password_input"
+                            android:paddingEnd="28dp"
+                            android:imeOptions="actionDone"
+                            />
+
+
+                        <ImageView
+                            android:layout_marginBottom="16dp"
+                            style="@style/custom_image_edittext_compound_imageview"
+                            android:src="@drawable/eye"
+                            android:id="@+id/fragment_sign_up_password_visibility_button"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginEnd="6dp"
+                            android:layout_gravity="bottom|end"
+                            android:clickable="true"
+                            />
+
+                    </FrameLayout>
+
+                    <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/accent_rounded_button_layout_style"
+                        android:layout_marginTop="16dp"
+                        android:id="@+id/confirm_btt"
+                        >
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/text_sign_up"
+                            style="@style/primary_text_view_style_mid"
+                            />
+
+                    </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <LinearLayout
+            style="@style/bottom_full_width_button_layout_style"
+            android:id="@+id/fragment_sign_up_switch_to_sign_in"
+            >
+
+            <TextView
+                style="@style/bottom_full_width_button_text_style"
+                android:text="@string/msg_already_have_account"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+    android:layout_gravity="center"
+    android:id="@+id/progressView"
+    style="?android:attr/progressBarStyleLarge"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:visibility="gone" />
+</FrameLayout>

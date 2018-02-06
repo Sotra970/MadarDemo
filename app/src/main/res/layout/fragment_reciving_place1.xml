@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <android.support.design.widget.CoordinatorLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+                <fragment
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/map"
+                    android:name="com.google.android.gms.maps.SupportMapFragment"/>
+
+            <LinearLayout
+                android:id="@+id/bottom_sec"
+                android:elevation="1dp"
+                android:layout_gravity="bottom"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <ImageButton
+                    android:layout_marginBottom="16dp"
+                    app:layout_anchor="@id/bottom_sec"
+                    android:layout_marginRight="24dp"
+                    android:layout_gravity="bottom|right"
+                    android:elevation="1dp"
+                    android:background="@drawable/white_circle"
+                    android:src="@drawable/ic_my_location_black_36dp"
+                    android:id="@+id/current_location"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp" />
+
+                <LinearLayout
+                    android:paddingTop="16dp"
+                    android:layout_gravity="bottom"
+                    android:orientation="vertical"
+                    android:background="@color/white"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <FrameLayout
+                        android:visibility="gone"
+                        android:id="@+id/driver_extra_info_layout"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/custom_image_edittext_compound_layout"
+                        >
+
+                        <ImageView
+                            style="@style/custom_image_edittext_compound_imageview"
+                            android:src="@drawable/home_icon"
+                            />
+
+                        <EditText
+                            android:maxLines="4"
+                            android:id="@+id/driver_extra_info_input"
+                            style="@style/custom_image_edittext_compound_edittext"
+                            android:hint="@string/driver_extra_info_hint"
+                            android:imeOptions="actionDone"
+                            android:layout_height="wrap_content"
+                            />
+                    </FrameLayout>
+
+                    <!--<include layout="@layout/pager_bullet_view"/>-->
+
+                    <LinearLayout
+                        android:layout_marginBottom="24dp"
+                        android:clickable="true"
+                        android:elevation="1dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/accent_rounded_button_layout_style"
+                        android:id="@+id/next"
+                        >
+
+                        <TextView
+                            android:id="@+id/next_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/primary_text_view_style"
+                            android:text="@string/next"
+                            />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+
+        </android.support.design.widget.CoordinatorLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <FrameLayout
+                android:id="@+id/address_fav_content_frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <LinearLayout
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingRight="18dp"
+                android:paddingLeft="18dp"
+                android:elevation="1dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="24dp"
+                android:layout_marginLeft="24dp"
+                android:background="@drawable/white_rectl"
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <ImageView
+                    android:src="@drawable/magnifier"
+                    android:id="@+id/search"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp" />
+                <TextView
+                    android:id="@+id/address_text"
+                    android:paddingRight="8dp"
+                    android:paddingLeft="8dp"
+                    style="@style/text_regular"
+                    android:textSize="@dimen/text_size_small"
+                    android:gravity="center"
+                    android:text="@string/address"
+                    android:textColor="@color/grey_700"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                <ImageView
+                    android:elevation="3dp"
+                    android:src="@drawable/heart"
+                    android:id="@+id/fav"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp" />
+
+            </LinearLayout>
+
+
+        </FrameLayout>
+
+
+    </FrameLayout>
+
+
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/progressView"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+</android.support.v7.widget.CardView>

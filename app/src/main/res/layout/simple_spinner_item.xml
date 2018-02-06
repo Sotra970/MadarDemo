@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView
+    android:paddingStart="24dp"
+    android:id="@+id/row_text"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_gravity="start"
+    android:layout_height="wrap_content"
+    android:textSize="@dimen/text_size_small"
+    style="@style/text_regular"
+    android:text="city"
+    android:gravity="start"
+    android:textColor="@color/app_grey_1"
+    xmlns:app="http://schemas.android.com/apk/res-auto" />

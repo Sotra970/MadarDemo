@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="edittext_underline_thickness">1dp</dimen>
+
+    <dimen name="edittext_vert_margin">8dp</dimen>
+
+    <dimen name="recycler_item_conrner_radius">12dp</dimen>
+
+    <dimen name="confirm_round_button_radius">20dp</dimen>
+
+    <dimen name="text_size_xlarge">22sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_xsmall">12sp</dimen>
+
+    <dimen name="day_widget_width">60dp</dimen>
+    <dimen name="day_widget_height">70dp</dimen>
+
+
+</resources>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    android:id="@+id/navigation_view_header"
+    android:background="@drawable/bg_land"
+    android:padding="16dp"
+    >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:layout_gravity="center_vertical">
+
+
+
+        <com.madar.madardemo.View.Widget.FixedAspectRatioFrameLayout
+            app:aspectRatioWidth="1"
+            app:aspectRatioHeight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@drawable/dotted_list_circle"
+            android:layout_margin="8dp"
+            >
+
+
+            <ImageView
+                android:id="@+id/navigation_view_header_image_view_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+           <FrameLayout
+               android:layout_gravity="center"
+               android:layout_marginTop="8dp"
+               android:layout_marginBottom="10dp"
+               android:layout_marginLeft="8dp"
+               android:layout_marginRight="8dp"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent">
+               <com.madar.madardemo.View.Widget.AspectRatioImageView
+                   app:aspectRatio="1"
+                   android:layout_gravity="center"
+                   app:aspectRatioEnabled="true"
+                   app:dominantMeasurement="height"
+                   android:layout_width="wrap_content"
+                   android:layout_height="match_parent"
+                   android:id="@+id/navigation_view_header_image_view"
+                   />
+           </FrameLayout>
+        </com.madar.madardemo.View.Widget.FixedAspectRatioFrameLayout>
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <LinearLayout
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:maxLines="1"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/navigation_view_header_store_text_view"
+                        android:text="اسم المتجر"
+                        style="@style/text_bold"
+                        android:textSize="19sp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:maxLines="1"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/navigation_view_header_title_text_view"
+                        android:text="اسم العميل"
+                        style="@style/text_medium"
+                        android:layout_below="@id/navigation_view_header_store_text_view"
+                        />
+
+
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/logout_action"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_gravity="bottom|center"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/navigation_view_header_sign_out_text_view"
+                        android:text="@string/text_sign_out"
+                        />
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/logout"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+</FrameLayout>

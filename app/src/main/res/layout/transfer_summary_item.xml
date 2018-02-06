@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:corner_radius="@dimen/recycler_item_conrner_radius"
+    android:layout_marginBottom="8dp"
+    android:background="@color/transparent"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/transfer_summary_item_background">
+
+        <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/money_item_layout"
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:corner_radius="4dp"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/app_yellow_1"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="@dimen/day_widget_width"
+                        android:layout_height="@dimen/day_widget_height"
+                        android:orientation="vertical"
+                        android:gravity="center"
+                        android:background="@color/app_yellow_2"
+                        >
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/transfer_summary_item_day_text_view"
+                            android:text="8"
+                            style="@style/yellow_date_item_text"
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/transfer_summary_item_month_text_view"
+                            android:text="NOV"
+                            style="@style/yellow_date_item_text"
+                            />
+
+                    </LinearLayout>
+
+                </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wire_transfer_id_text"
+                    style="@style/money_item_title_text"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tranfer_summary_item_id_text_view"
+                    android:text="gtrhgfh5453r34t34"
+                    style="@style/money_item_info_text"
+                    />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:gravity="center"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/wire_transfer_amount_text"
+                    style="@style/money_item_title_text"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tranfer_summary_item_amount_text_view"
+                    android:text="100000000"
+                    style="@style/money_item_info_text"
+                    />
+
+            </LinearLayout>
+
+        </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+    </LinearLayout>
+
+</com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>

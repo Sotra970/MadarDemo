@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:corner_radius="@dimen/recycler_item_conrner_radius"
+    android:layout_marginBottom="8dp"
+    android:background="@color/transparent"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/receipt_list_item_background"
+        >
+
+
+        <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/money_item_layout"
+            >
+            
+            <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                android:layout_width="@dimen/day_widget_width"
+                android:layout_height="@dimen/day_widget_height"
+                android:orientation="vertical"
+                android:gravity="center_vertical"
+                style="@style/yellow_date_item_text"
+                android:background="@color/app_yellow_2"
+                >
+                
+                
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/yellow_date_item_text"
+                    android:id="@+id/receipt_list_item_day_text_view"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/yellow_date_item_text"
+                    android:id="@+id/receipt_list_item_month_text_view"
+                    />
+                
+            </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+            
+        </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+        <LinearLayout
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_delivery_fees"
+                        android:gravity="center"
+                        style="@style/money_item_title_text"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/receipt_list_item_delivery_fees_text_view"
+                        android:gravity="center"
+                        style="@style/money_item_info_text"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_goods_price"
+                        android:gravity="center"
+                        style="@style/money_item_title_text"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/receipt_list_item_goods_price_text_view"
+                        android:gravity="center"
+                        style="@style/money_item_info_text"
+                        />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_credit"
+                        android:gravity="center"
+                        style="@style/money_item_title_text"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/receipt_list_item_credit_text_view"
+                        android:gravity="center"
+                        style="@style/money_item_info_text"
+                        />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/receipt_list_item_paid_amount_text_view"
+                    android:textSize="@dimen/text_size_xsmall"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>

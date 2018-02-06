@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:background="@color/white"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                />
+
+            <LinearLayout
+                style="@style/fragment_layout_container_style"
+                >
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_create_new_account"
+                    style="@style/primary_text_view_style"
+                    android:layout_marginBottom="10dp"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_message_sent_hint"
+                    style="@style/secondary_text_view_style"
+                    android:id="@+id/fragment_message_sent_secondary_text_view"
+                    android:gravity="center"
+                    />
+
+                <FrameLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/custom_image_edittext_compound_layout"
+                    >
+
+                    <ImageView
+                        style="@style/custom_image_edittext_compound_imageview"
+                        android:src="@drawable/confirm_code"
+                        />
+
+                    <EditText
+                        android:id="@+id/code_input"
+                        android:inputType="number"
+                        style="@style/custom_image_edittext_compound_edittext"
+                        android:hint="@string/hint_confirmation_code"
+                        />
+
+                </FrameLayout>
+
+
+                <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/accent_rounded_button_layout_style"
+                    android:layout_marginTop="16dp"
+                    android:id="@+id/fragment_message_sent_confirm"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_sign_up"
+                        style="@style/primary_text_view_style"
+                        />
+
+                </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+                <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/accent_rounded_button_layout_style"
+                    android:background="@color/app_grey_1"
+                    android:layout_marginTop="16dp"
+                    android:id="@+id/fragment_message_sent_resend_code"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_resend_confirmation_code"
+                        style="@style/primary_text_view_style"
+                        android:textColor="@color/white"
+                        />
+
+                </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+                <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/accent_rounded_button_layout_style"
+                    android:background="@color/app_dark_indigo"
+                    android:layout_marginTop="16dp"
+                    android:id="@+id/fragment_message_sent_cancel"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_cancel"
+                        style="@style/primary_text_view_style"
+                        android:textColor="@color/white"
+                        />
+
+                </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/bottom_full_width_button_layout_style"
+            >
+
+            <TextView
+                android:id="@+id/do_u_have_account"
+                style="@style/bottom_full_width_button_text_style"
+                android:text="@string/msg_already_have_account"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/progressView"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+</FrameLayout>

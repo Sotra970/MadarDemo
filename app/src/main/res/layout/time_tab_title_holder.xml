@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:attrs="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:id="@+id/tab_container"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <com.madar.madardemo.Util.CustomTextView
+        android:textColor="@color/grey_700"
+        android:id="@+id/time_from"
+        android:textSize="@dimen/text_size_xsmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        attrs:font_name="Changa-SemiBold"
+        />
+
+
+
+    <com.madar.madardemo.Util.CustomTextView
+        android:visibility="gone"
+        android:textColor="@color/grey_700"
+        android:id="@+id/to_text"
+        android:text="@string/to"
+        android:textSize="@dimen/text_size_xsmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        attrs:font_name="Changa-SemiBold"
+        />
+
+
+    <com.madar.madardemo.Util.CustomTextView
+        android:textColor="@color/grey_700"
+        android:id="@+id/time_to"
+        android:textSize="@dimen/text_size_xsmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        attrs:font_name="Changa-SemiBold"
+        />
+
+
+
+
+</LinearLayout>

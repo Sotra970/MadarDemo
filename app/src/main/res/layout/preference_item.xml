@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:gravity="center"
+            android:layout_marginEnd="8dp"
+            >
+
+            <FrameLayout
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:gravity="center"
+                >
+
+                <ImageView
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:id="@+id/preference_item_image_view"
+                    android:layout_gravity="center"
+                    />
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/rotated_line"
+                    android:id="@+id/preference_item_rotated_line_image_view"
+                    />
+
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/preference_item_text_view"
+            style="@style/text_bold"
+            android:textSize="16sp"
+            />
+
+    </LinearLayout>
+
+    <com.kyleduo.switchbutton.SwitchButton
+        android:id="@+id/preference_item_toggle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        app:kswTextOff="@string/text_off"
+        app:kswTextOn="@string/text_on"
+        app:kswBackColor="@color/app_yellow_1"
+        app:kswThumbColor="@color/white"
+        />
+
+</RelativeLayout>

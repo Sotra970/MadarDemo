@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:scrollbarSize="0dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginLeft="16dp"
+        android:scrollbars="vertical"
+        android:scrollIndicators="none"
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp">
+
+                <FrameLayout
+                    android:layout_marginTop="16dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp">
+
+                    <ImageView
+                        style="@style/custom_image_edittext_compound_imageview"
+                        android:src="@drawable/pen" />
+
+                    <EditText
+                        android:id="@+id/content_title_input"
+                        style="@style/custom_image_edittext_compound_edittext"
+                        android:hint="@string/hint_package_content"
+                        android:imeOptions="actionDone"
+                        />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/title_err"
+                    style="@style/small_err_textview_style"
+                    android:text="@string/empty_error"
+                    />
+
+            </LinearLayout>
+
+            <!--//car size sec -->
+            <LinearLayout
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="@string/car_size"
+                    android:textColor="@color/black"
+                    style="@style/text_semi_bold"
+                    android:textSize="@dimen/text_size_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <FrameLayout
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:id="@+id/size_small_rd"
+                            android:drawablePadding="8dp"
+                            android:scaleY="0.8"
+                            android:scaleX="0.8"
+                            android:text="@string/small"
+                            android:drawableEnd="@drawable/scooter"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_weight="1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:id="@+id/size_mid_rd"
+                            android:drawablePadding="8dp"
+                            android:scaleY="0.8"
+                            android:scaleX="0.8"
+                            android:text="@string/mid"
+                            android:drawableEnd="@drawable/van"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </FrameLayout>
+                </RadioGroup>
+                <FrameLayout
+                    android:layout_marginStart="1dp"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/size_big_rd"
+                        android:drawablePadding="8dp"
+                        android:scaleY="0.8"
+                        android:scaleX="0.8"
+                        android:text="@string/big"
+                        android:drawableEnd="@drawable/transportation_truck"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </FrameLayout>
+
+
+                <TextView
+                    style="@style/small_err_textview_style"
+                    android:text="@string/empty_error"
+                    android:id="@+id/size_err"
+                    />
+            </LinearLayout>
+
+
+            <!--//car size sec -->
+            <LinearLayout
+                android:layout_marginBottom="8dp"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:text="@string/car_type"
+                    android:textColor="@color/black"
+                    style="@style/text_semi_bold"
+                    android:textSize="@dimen/text_size_medium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+                <RadioGroup
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <FrameLayout
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:id="@+id/type_normal"
+                            android:drawablePadding="8dp"
+                            android:scaleY="0.8"
+                            android:scaleX="0.8"
+                            android:text="@string/normal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:id="@+id/type_cold"
+                            android:drawablePadding="8dp"
+                            android:scaleY="0.8"
+                            android:scaleX="0.8"
+                            android:text="@string/cold"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </FrameLayout>
+
+
+                    <FrameLayout
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <android.support.v7.widget.AppCompatRadioButton
+                            android:id="@+id/type_hot"
+                            android:drawablePadding="8dp"
+                            android:scaleY="0.8"
+                            android:scaleX="0.8"
+                            android:text="@string/hot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+                    </FrameLayout>
+                </RadioGroup>
+
+                <TextView
+
+                    style="@style/small_err_textview_style"
+                    android:text="@string/empty_error"
+                    android:id="@+id/type_err"
+                    />
+            </LinearLayout>
+
+
+            <!--//car size sec -->
+            <LinearLayout
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_weight="1"
+                    android:layout_gravity="center"
+                    android:text="@string/package_count"
+                    android:textColor="@color/black"
+                    style="@style/text_semi_bold"
+                    android:textSize="@dimen/text_size_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+                <ImageView
+                    android:id="@+id/count_plus"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:src="@drawable/plus"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" />
+
+
+                <EditText
+                    android:inputType="number"
+                    android:id="@+id/pack_count_txt"
+                    android:background="@drawable/indigo_border"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/app_dark_indigo"
+                    style="@style/text_semi_bold"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="8dp"
+                    android:paddingTop="4dp"
+                    android:paddingBottom="4dp"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/count_minus"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:src="@drawable/minus"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp" />
+
+
+
+            </LinearLayout>
+
+
+            <!--price -->
+            <LinearLayout
+                android:gravity="center"
+                android:layout_margin="16dp"
+                android:minHeight="48dp"
+                android:background="@drawable/indigo_rounded_rect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textSize="@dimen/text_size_medium"
+                    android:textColor="@color/white"
+                    style="@style/text_medium"
+                    android:text="@string/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:textSize="@dimen/text_size_medium"
+                    android:textColor="@color/white"
+                    style="@style/text_semi_bold"
+                    android:textStyle="bold"
+                    android:text=":"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/price_txt"
+                        android:textSize="@dimen/text_size_large"
+                        android:textColor="@color/white"
+                        style="@style/text_bold"
+                        android:textStyle="bold"
+                        android:text="40"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+
+
+                    <TextView
+                        android:id="@+id/currency_txt"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:textSize="@dimen/text_size_medium"
+                        android:textColor="@color/white"
+                        style="@style/text_medium"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+
+            <!--img upload-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_weight="1"
+                    android:layout_gravity="start"
+                    android:text="@string/capture_image"
+                    android:textColor="@color/black"
+                    style="@style/text_semi_bold"
+                    android:textSize="@dimen/text_size_medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <FrameLayout
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:id="@+id/capture_img"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/photo1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="36dp" />
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:text="@string/capture_image"
+                                android:textColor="@color/grey_800"
+                                style="@style/text_semi_bold"
+                                android:textSize="@dimen/text_size_xsmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <LinearLayout
+                            android:layout_gravity="center"
+                            android:id="@+id/select_img"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:src="@drawable/photo2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="36dp" />
+                            <TextView
+                                android:layout_weight="1"
+                                android:layout_gravity="center"
+                                android:text="@string/gallery"
+                                android:textColor="@color/grey_800"
+                                style="@style/text_semi_bold"
+                                android:textSize="@dimen/text_size_xsmall"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+                        </LinearLayout>
+                    </FrameLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginTop="8dp"
+                    style="@style/small_err_textview_style"
+                    android:text="@string/empty_error"
+                    android:id="@+id/img_err"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:gravity="bottom"
+                android:orientation="vertical"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <include layout="@layout/pager_bullet_view"/>
+
+                <LinearLayout
+                    android:layout_gravity="bottom"
+                    android:layout_marginBottom="16dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:elevation="1dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/dark_indigo"
+                        android:id="@+id/cancel"
+                        >
+                        <TextView
+                            android:textColor="@color/white"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/primary_text_view_style"
+                            android:text="@string/back"
+                            />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/accent_rounded_layout_style"
+                        android:id="@+id/next"
+                        >
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/primary_text_view_style"
+                            android:text="@string/next"
+                            />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+
+
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/progressView"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+</android.support.v7.widget.CardView>

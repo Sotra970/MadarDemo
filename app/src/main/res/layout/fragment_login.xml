@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/container"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:background="@color/white"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                />
+
+            <LinearLayout
+                style="@style/fragment_layout_container_style"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_login"
+                    style="@style/primary_text_view_style"
+                    />
+
+                <TextView
+                    android:layout_marginTop="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_login_hint"
+                    style="@style/secondary_text_view_style"
+                    android:gravity="center"
+                    />
+
+                <include layout="@layout/social_login"/>
+
+                <FrameLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/custom_image_edittext_compound_layout"
+                    >
+
+                    <ImageView
+                        style="@style/custom_image_edittext_compound_imageview"
+                        android:src="@drawable/profile_user_black"
+                        />
+
+
+                    <EditText
+                        android:maxLines="1"
+                        android:inputType="textEmailAddress"
+                        style="@style/custom_image_edittext_compound_edittext"
+                        android:hint="@string/hint_email_or_phone_num"
+                        android:id="@+id/fragment_login_username_edittext"
+                        />
+
+                </FrameLayout>
+
+                <FrameLayout android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/custom_image_edittext_compound_layout"
+                    >
+
+
+
+                    <EditText
+                        android:maxLines="1"
+                        android:inputType="textPassword"
+                        style="@style/custom_image_edittext_compound_edittext"
+                        android:hint="@string/hint_password"
+                        android:id="@+id/fragment_login_password_edittext"
+                        android:paddingEnd="28dp"
+                        android:imeOptions="actionDone"
+                        />
+
+                    <ImageView
+                        style="@style/custom_image_edittext_compound_imageview"
+                        android:src="@drawable/lock"
+                        />
+
+                    <ImageView
+                        android:tint="@color/grey_500"
+                        android:layout_marginBottom="16dp"
+                        style="@style/custom_image_edittext_compound_imageview"
+                        android:src="@drawable/eye"
+                        android:id="@+id/fragment_sign_up_password_visibility_button"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginEnd="6dp"
+                        android:layout_gravity="bottom|end"
+                        android:clickable="true"
+                        />
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="end">
+
+                    <TextView
+                        android:id="@+id/forget_pass_text"
+                        android:textColor="@color/app_grey_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/msg_forgot_password"
+                        android:layout_gravity="end"
+                        style="@style/secondary_text_view_style"
+                        />
+
+                </LinearLayout>
+
+                <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/accent_rounded_button_layout_style"
+                    android:layout_marginTop="32dp"
+                    android:id="@+id/fragment_login_confirm_button"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_login"
+                        style="@style/primary_text_view_style"
+                        />
+
+                </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/bottom_full_width_button_layout_style"
+            android:id="@+id/fragment_login_switch_to_sign_up"
+            >
+
+            <TextView
+                style="@style/bottom_full_width_button_text_style"
+                android:text="@string/msg_want_to_add_acc"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/progressView"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+</FrameLayout>

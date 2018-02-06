@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string name="app_name">Madar</string>
+    <string name="google_maps_key">AIzaSyApDtw8UjY-dkexMlFNFk_X5QIxElzgSIc</string>
+    <string name="facebook_app_id">529493020721367</string>
+    <string name="fb_login_protocol_scheme">fb529493020721367</string>
+
+    <string name="text_login_hint">قم بتسجيل دخولك بواسطة بياناتك اذا كنت تمتلك حساب</string>
+    <string name="text_login">تسجيل الدخول</string>
+
+    <string name="msg_want_to_add_acc">هل تريد اضافة حساب جديد؟</string>
+
+    <string name="hint_password">كلمة المرور</string>
+
+    <string name="hint_email_or_phone_num">البريد الالكتروني او رقم الجوال</string>
+
+    <string name="msg_forgot_password">هل نسيت كلمة المرور؟</string>
+
+    <string name="text_create_new_account">تسجيل حساب جديد</string>
+    <string name="text_create_new_account_hint">قم بملئ بياناتك لتسجيل حساب جديد</string>
+    <string name="hint_store_title">اسم المتجر\المؤسسة</string>
+    <string name="hint_first_name">الاسم الاول</string>
+    <string name="hint_last_name">اسم العائلة</string>
+    <string name="hint_phone_number">رقم الجوال</string>
+    <string name="hint_email">البريد الالكتروني</string>
+    <string name="hint_city">المدينة</string>
+    <string name="hint_street">الحي</string>
+    <string name="text_sign_up">تسجيل الحساب</string>
+    <string name="msg_already_have_account">هل تمتلك حساب؟</string>
+
+    <string name="text_message_sent_hint">تم ارسال رسالة تحتوي على رمز التأكيد</string>
+    <string name="hint_confirmation_code">رمز التأكيد</string>
+    <string name="text_resend_confirmation_code">اعادة ارسال رمز التأكيد</string>
+    <string name="text_cancel">الغاء</string>
+    <string name="back">رجوع</string>
+
+    <string name="text_deliver_to_another_city">شحن لمدينة اخرى</string>
+    <string name="text_deliver_to_same_city">توصيل لنفس المدينة</string>
+
+    <string name="fragment_title_delivery_destination">الرئيسية</string>
+    <string name="text_sign_out">تسجيل الخروج</string>
+
+    <string name="nav_drawer_title_main_page">الصفحة الرئيسية</string>
+    <string name="nav_drawer_title_profile">الملف الشخصي</string>
+    <string name="nav_drawer_title_orders">شحناتي</string>
+    <string name="nav_drawer_title_receipts">الفواتير</string>
+    <string name="nav_drawer_title_bank_account">حساب الحوالات البنكية</string>
+    <string name="nav_drawer_title_about_us">من نحن</string>
+    <string name="nav_drawer_title_contact_with_us">اتصل بنا</string>
+    <string name="nav_drawer_title_settings">الاعدادات</string>
+    <string name="nav_drawer_title_wire_transfer_summary">ملخص الحوالات البنكية</string>
+
+    <string name="msg_save_profile_edits">حفظ التعديلات</string>
+
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
+
+    <string name="text_share_app">مشاركة التطبيق</string>
+    <string name="text_share_your_profile">مشاركة الحساب</string>
+    <string name="text_invite_friends">دعوة الاصدقاء</string>
+
+    <string name="fragment_title_profile">الملف الشخصي</string>
+    <string name="text_about_us">من نحن</string>
+    <string name="about_us">شركة مدار اكسبرس لشحن وتوصيل طلبات المتاجر الالكترونية والشركات والأفراد داخل مدينة الرياض في نفس اليوم مع خدمة الدفع عن الاستلام  وخارجها أيضاً من موقع الشركة او المتجر الى باب العميل عن طريق التطبيق او الموقع الالكتروني بكل سهولة وأمان كما نقدم أيضاً خدمة تخزين المنتجات وبضائع المتاجر الالكترونية حيث نقوم بتجهيز وتغليف الطلب وشحنه أو توصيله الى العميل بشكل مباشر ونتيح لك تفاصيل كاملة عن شحناتك ومبيعاتك.</string>
+    <string name="fragment_title_about_us">من نحن</string>
+
+    <string name="msg_no_internet">لا يوجد اتصال بشبكة الانترنت \n الرجاء اعادة المحاولة</string>
+    <string name="text_try_again">اعادة المحاولة</string>
+
+    <string name="fragment_title_contact_us">اتصل بنا</string>
+    <string name="fragment_title_notifications">اشعارات</string>
+
+    <string name="text_delivery_fees">قيمة التوصيل</string>
+    <string name="text_goods_price">قيمة البضائع</string>
+    <string name="text_goods_price_err">قيمة البضاعه يجب ان تكون على الاقل بـ1</string>
+    <string name="text_credit">الرصيد</string>
+
+    <string name="fragment_title_receipts">الفواتير</string>
+
+    <string name="amounts_to_be_transferred">مبالغ في انتظار التحويل</string>
+    <string name="last_two_wire_transfers">اخر حوالتين بنكيتين</string>
+    <string name="unreceived_goods_prices">قيمة بضاعة لم تحول</string>
+    <string name="delivery_unpaid_fees">قيمة توصيل مستحقة</string>
+
+    <string name="text_contact_us">اتصل بنا</string>
+
+    <string name="preference_notifications">الاشعارات</string>
+    <string name="fragment_title_preferences">الاعدادات</string>
+
+    <string name="text_on">ON</string>
+    <string name="text_off">OFF</string>
+
+    <string name="account_number">رقم الحساب</string>
+    <string name="account_owner_name">اسم صاحب الحساب</string>
+
+    <string name="text_save">حفظ</string>
+    <string name="fragment_title_bank_account">حساب الحوالات البنكية</string>
+
+    <string name="text_from">من</string>
+    <string name="text_to">الى</string>
+
+    <string name="order_statue_new_order">طلب جديد</string>
+    <string name="order_statue_order_received">تم التسلم</string>
+    <string name="order_statue_problem_receiving">مشكلة في الاستلام</string>
+    <string name="order_statue_ready_for_delivery">جاهز للشحن</string>
+    <string name="order_statue_agreeing_on">جاري تحديد التسليم</string>
+    <string name="order_statue_is_delivering">جاري التسليم الآن</string>
+
+    <string name="text_all_orders">الكل</string>
+    <string name="text_i_deliver">انا المرسل</string>
+    <string name="text_i_receive">انا المستلم</string>
+
+    <string name="text_bank_account_saved">تم حفظ الحساب</string>
+    <string name="text_connection_error">خطأ ف الاتصال</string>
+
+    <string name="hint_commercial_record">السجل التجاري</string>
+
+    <string name="text_contact_us_email">الايميل : </string>
+    <string name="text_contact_us_fax">الفاكس : </string>
+    <string name="text_contact_us_phone_number">الجوال : </string>
+    <string name="text_call_us_now">اتصل الآن</string>
+
+    <string name="text_contnact_us_stay_with_touch">ابقى على تواصل معنا : </string>
+    <string name="text_our_page_facebook">صفحتنا على فيسبوك</string>
+    <string name="text_our_page_twitter">حسابنا على تويتر</string>
+    <string name="text_our_page_gplus">حسابنا على جوجل بلس</string>
+    <string name="text_our_page_linkedin">حسابنا على لينكد ان</string>
+    <string name="text_our_page_youtube">قناتنا على يوتيوب</string>
+
+    <string name="text_for_shipment_and_delivery">للشحن والتوصيل</string>
+    <string name="empty_error">يجب ادخال قيمة</string>
+    <string name="invalid_username_pass">يرجى التأكد من صحة البيانات</string>
+    <string name="email_error">البريد الالكتروني غير صحيح</string>
+    <string name="link_error"> الرابط غير صحيح</string>
+    <string name="duplicated">موجود بالفعل</string>
+    <string name="phone_error">رقم الجوال غير صحيح</string>
+    <string name="wrong_code">كود التفعيل غير صحيح</string>
+    <string name="regstraion_scuccess">تم التسجيل بنجاح</string>
+    <string name="resend_scc">تم اعادة الارسال</string>
+
+    <string name="wire_transfer_amount_text">مبلغ الحوالة</string>
+    <string name="wire_transfer_id_text">رقم الحوالة</string>
+    <string name="send_password">ارسال الرقم السري</string>
+
+    <string name="fragment_title_transfer_summary">ملخص الحوالات البنكية</string>
+
+    <string name="text_fast_delivery">التوصيل السريع</string>
+    <string name="text_delivery_2_all">شحن لجميع المناطق</string>
+    <string name="text_customer_service">خدمة العملاء</string>
+    <string name="text_customer_service_num">920020804</string>
+    <string name="text_packaging">التغليف</string>
+    <string name="text_packaging_2">التغليف و التخزين</string>
+    <string name="text_shippment">الشحن</string>
+    <string name="cash_on_delivery">الدفع عند الاستلام</string>
+
+    <string name="reciving_place">موقع الاستلام</string>
+    <string name="reciving_date_time">تاريخ و يوم الاستلام</string>
+    <string name="reciving_date">تاريخ الاستلام</string>
+    <string name="reciving_day_date">تاريخ و يوم الاستلام</string>
+    <string name="reciving_time">وقت الاستلام</string>
+    <string name="to">إلى</string>
+    <string name="ok">موافق</string>
+    <string name="plschoose_date">الرجاء اختيار وقت </string>
+    <string name="package_content">محتوى الشحنة</string>
+    <string name="package_receiver_info">بيانات المستلم</string>
+    <string name="package_price"> قيمة البضاعة و التوصيل</string>
+    <string name="package_details">تفاصيل الطلب</string>
+    <string name="order_done">تم الطلب</string>
+    <string name="next">التالي</string>
+    <string name="collect_the_package">التقاط الشحنة في الستقبال</string>
+    <string name="call_me_5_min_before">اتصل بي قبل وصولك بخمس دقائق </string>
+    <string name="driver_extra_info_hint">على سبيل المثال الطابق - الشقة الخ</string>
+    <string name="driver_extra_info">معلومات اضافيه للسائق</string>
+    <string name="hint_package_content">اسم مضمون الشحنة</string>
+    <string name="small">صغير(١ك - ٥ك)</string>
+    <!--<string name="r_s">  ر.س  </string>-->
+    <string name="big">اكبر من ١٠ك</string>
+    <string name="mid">متوسط(٦ك - ١٠ك)</string>
+    <string name="normal">  عاديه  </string>
+    <string name="cold">  مبردة  </string>
+    <string name="hot">  ساخنه  </string>
+    <string name="package_count">عدد الطرود</string>
+    <string name="price">السعر</string>
+    <string name="capture_image">التقط صورة</string>
+    <string name="gallery">فتح المعرض</string>
+    <string name="car_type">نوع السيارة</string>
+    <string name="car_size">حجم الشحنة</string>
+    <string name="map_link">رابط الخريطه</string>
+    <string name="map_open">فتح الخريطه</string>
+    <string name="building">رقم العمارة/الشقه</string>
+    <string name="street_name">اسم الشارع</string>
+    <string name="receiver">اسم المستلم</string>
+    <string name="pack_value">قيمة البضاعة</string>
+    <string name="pck_consumtion">تحصيل قيمة البضاعة</string>
+    <string name="pck_warn">- يرجى عدم اضافة قيمة التوصيل على قيمة البضاعة الا في حالة كان الدفع على الحساب </string>
+    <string name="payment_type">طريقة دفع قيمة التوصيل</string>
+    <string name="pack_value_rd1">تم دفع قيمة البضاععة مقدماً</string>
+    <string name="pack_value_rd2">تحصيل قيمة البضاعة</string>
+    <string name="credit">الدفع مقدماً</string>
+    <string name="debit">على الحساب / يخصم من الرصيد لاحقاً</string>
+    <string name="sender_ino">بيانات المرسل</string>
+    <string name="receiver_info">بيانات المستقبل</string>
+    <string name="receiving_details">تفاصيل التسليم</string>
+    <string name="package_imgs">صور الشحنة</string>
+    <string name="package_details_price">سعر التوصيل</string>
+    <string name="package_details_payment_method">طرق الدفع</string>
+    <string name="package_details_value">قيمة البضاعة</string>
+    <string name="package_details_total_price">المبلغ الكلي</string>
+    <string name="rs">رس</string>
+    <string name="finish">انهاء</string>
+    <string name="order_confirmation_message">تم ارسال الطلب بنجاح</string>
+    <string name="pack_num">رقم الشحنة</string>
+    <string name="address"> العنوان</string>
+    <string name="no_items">لا يوجد بيانات </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="toast_cannot_retrieve_cropped_image">يرجى التاكد من وجود مساحة فارغة في الذكرةالداخلية</string>
+    <string name="toast_unexpected_error">un expexted error</string>
+    <string name="edit_img">تعديل الصورة</string>
+    <string name="loading">الرجاء الانتظار</string>
+    <string name="location_err">الرجاء اختيار مكان التسليم</string>
+
+
+    <string name="order_time">الوقت</string>
+    <string name="order_goods_price">قيمة البضاعة</string>
+    <string name="order_delivery_fees">قيمة التوصيل</string>
+    <string name="order_number">رقم الشحنة</string>
+    <string name="order_state">الحالة</string>
+
+    <string name="balance">الرصيد</string>
+
+    <string name="no_data">لا توجد بيانات</string>
+
+    <string name="fragment_title_day_summary">ملخص اليوم</string>
+    <string name="delivered">تم التوصيل</string>
+
+    <string name="bank_add_success">تم اضافة الحساب</string>
+    <string name="bank_add_failure">رقم الحساب موجود بالفعل </string>
+
+    <string name="fragment_title_transfer_info">تفاصيل الحوالات البنكية</string>
+    <string name="fragment_title_orders">شحناتي</string>
+    <string name="day">يوم</string>
+    <string name="accept_message">موافق</string>
+    <string name="city_out_of_range">عذرا التطبيق لا يتيح هذا لمجال حتى الان سوف نقوم باخبارك عندما نوسع خدماتنا لمنطقتك. \n  يرجى الاتصال بنا لمزيد من المعلومات </string>
+    <string name="city_not_the_same">يجب ان تكون المدينه نفس مدينة الاستلام</string>
+    <string name="no_gps_per">يبدو أن نظام تحديد المواقع الخاص بك معطل، هل تريد تمكينه؟</string>
+    <string name="profile_updated">لقد تم تحديث بياناتك</string>
+    <string name="wait">الرجاء النتظار</string>
+    <string name="showMapCityNotEqaletoSelectedCity">المدينة المختارة من الخريطة ليست نفس المدينة المختارة من القائمة اعلى</string>
+    <string name="order_confirm">تأكيد الطلب</string>
+    <string name="delete_confirm">هل تريد حذف هذا الطلب</string>
+    <string name="order_deleted">لقد تم حذف الطلب</string>
+    <string name="order_cant_be_deleted">لا يمكنك حذف هذا الطلب</string>
+    <string name="forget_message_head">سوف يتم ارسال الرقم السري الى رقم الجوال و البريد الالكتروني</string>
+    <string name="forget_message">لقد تم ارسال الرقم السري الى رقم الجوال و البريد الالكتروني</string>
+    <string name="search_place">البحث عن مكان</string>
+    <string name="unavailable_now">هذه الخيارات غير متاحه حالياً</string>
+    <string name="price_error">هذه الاختيارات غير متاحه الان فى مدينتك يرجى اختيار حجم ونوع سياره اخرى</string>
+    <string name="time_exceeded">لقد انتهت هذة الفترة يرجى اختيار فترات اخرى</string>
+    <string name="driver_location">مكان السائق </string>
+    <string name="text_our_page_instagram">صفحتنا على إنستغرام</string>
+    <string name="hint_country">الدولة</string>
+
+
+</resources>

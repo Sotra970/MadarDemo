@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item
+        android:bottom="1dp"
+        android:left="-4dp"
+        android:right="-4dp"
+        android:top="-4dp">
+        <shape android:shape="rectangle" >
+            <stroke
+                android:width="@dimen/edittext_underline_thickness"
+                android:color="@color/edittext_underline_color"
+                />
+
+            <solid android:color="#00FFFFFF"
+                />
+
+            <padding
+                android:bottom="5dp"
+                android:left="4dp"
+                android:right="4dp"
+                android:top="5dp" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,763 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:fillViewport="true"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!--// sender info sec-->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                    android:layout_marginTop="8dp"
+                    android:elevation="4dp"
+                    android:background="@color/app_yellow_1"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_weight="1"
+                        style="@style/text_semi_bold"
+                        android:textColor="@color/black"
+                        android:text="@string/sender_ino"
+                        android:textSize="@dimen/text_size_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_gravity="center"
+                        android:id="@+id/sender_call"
+                        android:src="@drawable/viber"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                </LinearLayout>
+
+            <!--// sender name -->
+            <LinearLayout
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:elevation="4dp"
+                android:paddingLeft="18dp"
+                android:paddingRight="18dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:tint="@color/app_yellow_1"
+                    android:src="@drawable/profile_user"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp" />
+                <TextView
+                    android:gravity="right"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/sender_name_text"
+                    android:layout_weight="1"
+                    style="@style/text_regular"
+                    android:textColor="@color/grey_700"
+                    android:text="@string/sender_ino"
+                    android:textSize="@dimen/text_size_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp" />
+            </LinearLayout>
+
+            <!--// sender address -->
+            <LinearLayout
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:elevation="4dp"
+                android:paddingLeft="18dp"
+                android:paddingRight="18dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:tint="@color/app_yellow_1"
+                    android:src="@drawable/placeholder"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp" />
+                <TextView
+                    android:gravity="right"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/sender_address_text"
+                    android:layout_weight="1"
+                    style="@style/text_regular"
+                    android:textColor="@color/grey_700"
+                    android:text="@string/sender_ino"
+                    android:textSize="@dimen/text_size_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_gravity="center"
+                    android:id="@+id/sender_direction"
+                    android:src="@drawable/left_arrow2"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp" />
+            </LinearLayout>
+
+            <!--// sender name -->
+            <LinearLayout
+                android:gravity="center"
+                android:layout_marginTop="8dp"
+                android:elevation="4dp"
+                android:paddingLeft="18dp"
+                android:paddingRight="18dp"
+                android:paddingTop="6dp"
+                android:paddingBottom="6dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:tint="@color/app_yellow_1"
+                    android:src="@drawable/document"
+                    android:layout_width="18dp"
+                    android:layout_height="18dp" />
+                <TextView
+                    android:gravity="right"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="8dp"
+                    android:id="@+id/sender_address_note_text"
+                    android:layout_weight="1"
+                    style="@style/text_regular"
+                    android:textColor="@color/grey_700"
+                    android:text="@string/sender_ino"
+                    android:textSize="@dimen/text_size_small"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp" />
+            </LinearLayout>
+
+
+            </LinearLayout>
+            <!--// sender info sec-->
+
+            <!--//////////////////-->
+
+            <!--// receiver info sec-->
+           <LinearLayout
+               android:orientation="vertical"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content">
+               <LinearLayout
+                   android:layout_marginTop="8dp"
+                   android:elevation="4dp"
+                   android:background="@color/app_yellow_1"
+                   android:paddingLeft="16dp"
+                   android:paddingRight="16dp"
+                   android:paddingTop="6dp"
+                   android:paddingBottom="6dp"
+                   android:orientation="horizontal"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <TextView
+                       android:layout_weight="1"
+                       style="@style/text_semi_bold"
+                       android:textColor="@color/black"
+                       android:text="@string/receiver_info"
+                       android:textSize="@dimen/text_size_medium"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content" />
+                   <ImageView
+                       android:layout_gravity="center"
+                       android:id="@+id/receiver_call"
+                       android:src="@drawable/viber"
+                       android:layout_width="18dp"
+                       android:layout_height="18dp" />
+               </LinearLayout>
+
+               <!--// receiver name -->
+               <LinearLayout
+                   android:gravity="center"
+                   android:layout_marginTop="8dp"
+                   android:elevation="4dp"
+                   android:paddingLeft="18dp"
+                   android:paddingRight="18dp"
+                   android:paddingTop="6dp"
+                   android:paddingBottom="6dp"
+                   android:orientation="horizontal"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <ImageView
+                       android:tint="@color/app_yellow_1"
+                       android:src="@drawable/profile_user"
+                       android:layout_width="18dp"
+                       android:layout_height="18dp" />
+                   <TextView
+                       android:gravity="right"
+                       android:layout_marginRight="8dp"
+                       android:layout_marginLeft="8dp"
+                       android:id="@+id/receiver_name_text"
+                       android:layout_weight="1"
+                       style="@style/text_regular"
+                       android:textColor="@color/grey_700"
+                       android:text="@string/receiver_info"
+                       android:textSize="@dimen/text_size_small"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content" />
+                   <ImageView
+                       android:layout_width="18dp"
+                       android:layout_height="18dp" />
+               </LinearLayout>
+
+               <!--// receiver address -->
+               <LinearLayout
+                   android:gravity="center"
+                   android:layout_marginTop="8dp"
+                   android:elevation="4dp"
+                   android:paddingLeft="18dp"
+                   android:paddingRight="18dp"
+                   android:paddingTop="6dp"
+                   android:paddingBottom="6dp"
+                   android:orientation="horizontal"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+                   <ImageView
+                       android:tint="@color/app_yellow_1"
+                       android:src="@drawable/placeholder"
+                       android:layout_width="18dp"
+                       android:layout_height="18dp" />
+                   <TextView
+                       android:gravity="right"
+                       android:layout_marginRight="8dp"
+                       android:layout_marginLeft="8dp"
+                       android:id="@+id/receiver_address_text"
+                       android:layout_weight="1"
+                       style="@style/text_regular"
+                       android:textColor="@color/grey_700"
+                       android:text="@string/receiver_info"
+                       android:textSize="@dimen/text_size_small"
+                       android:layout_width="match_parent"
+                       android:layout_height="wrap_content" />
+                   <ImageView
+                       android:layout_gravity="center"
+                       android:id="@+id/receiver_direction"
+                       android:src="@drawable/left_arrow2"
+                       android:layout_width="18dp"
+                       android:layout_height="18dp" />
+               </LinearLayout>
+           </LinearLayout>
+            <!--// receiver info sec-->
+
+
+            <!--// details  sec-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_marginTop="8dp"
+                    android:elevation="4dp"
+                    android:background="@color/app_yellow_1"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_weight="1"
+                        style="@style/text_semi_bold"
+                        android:textColor="@color/black"
+                        android:text="@string/package_details"
+                        android:textSize="@dimen/text_size_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                </LinearLayout>
+
+                <!--// details time -->
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:elevation="4dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="18dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:tint="@color/app_yellow_1"
+                        android:src="@drawable/analog_clock"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                    <TextView
+                        android:gravity="right"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/package_details_time"
+                        android:layout_weight="1"
+                        style="@style/text_regular"
+                        android:textColor="@color/grey_700"
+                        android:text="@string/package_details"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:elevation="4dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="18dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:tint="@color/app_yellow_1"
+                        android:src="@drawable/calendar"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                    <TextView
+                        android:gravity="right"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/package_details_date"
+                        android:layout_weight="1"
+                        style="@style/text_regular"
+                        android:textColor="@color/grey_700"
+                        android:text="@string/package_details"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <!--// details title  -->
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:elevation="4dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="18dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:tint="@color/app_yellow_1"
+                        android:src="@drawable/signature"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                    <TextView
+                        android:gravity="right"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/package_details_title"
+                        android:layout_weight="1"
+                        style="@style/text_regular"
+                        android:textColor="@color/grey_700"
+                        android:text="@string/package_details"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <!--// details notes  -->
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:elevation="4dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="18dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:tint="@color/app_yellow_1"
+                        android:src="@drawable/document"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                    <TextView
+                        android:gravity="right"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/package_details_notes"
+                        android:layout_weight="1"
+                        style="@style/text_regular"
+                        android:textColor="@color/grey_700"
+                        android:text="@string/package_details"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <!--// details img  -->
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:elevation="4dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="18dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:tint="@color/app_yellow_1"
+                        android:src="@drawable/photo2"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                    <TextView
+                        android:gravity="right"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        style="@style/text_regular"
+                        android:textColor="@color/grey_700"
+                        android:text="@string/package_imgs"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/package_details_imgs_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+            <!--// details  sec-->
+
+
+
+            <!--// receiving info sec-->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_marginTop="8dp"
+                    android:elevation="4dp"
+                    android:background="@color/app_yellow_1"
+                    android:paddingLeft="16dp"
+                    android:paddingRight="16dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_weight="1"
+                        style="@style/text_semi_bold"
+                        android:textColor="@color/black"
+                        android:text="@string/receiving_details"
+                        android:textSize="@dimen/text_size_medium"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                </LinearLayout>
+
+                <!--// receiver price -->
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:elevation="4dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="18dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:tint="@color/app_yellow_1"
+                        android:src="@drawable/delivering_goods"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                    <TextView
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        style="@style/text_regular"
+                        android:textColor="@color/grey_700"
+                        android:text="@string/package_details_price"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:gravity="center"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/receiving_price"
+                        android:layout_weight="1"
+                        style="@style/text_regular"
+                        android:textColor="@color/black"
+                        android:text="60"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:id="@+id/currency_txt"
+                        android:gravity="center"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        style="@style/text_regular"
+                        android:textColor="@color/grey_700"
+                        android:text="@string/rs"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                </LinearLayout>
+
+
+                <!--// receiver payment method -->
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:elevation="4dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="18dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:tint="@color/app_yellow_1"
+                        android:src="@drawable/dollar_bill"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                    <TextView
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        style="@style/text_regular"
+                        android:textColor="@color/grey_700"
+                        android:text="@string/package_details_payment_method"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:gravity="center"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/receiving_payment_method"
+                        android:layout_weight="1"
+                        style="@style/text_regular"
+                        android:textColor="@color/black"
+                        android:text="@string/package_details_payment_method"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:gravity="center"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        style="@style/text_regular"
+                        android:textColor="@color/grey_700"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                </LinearLayout>
+
+                <!--// receiver  pck value -->
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:elevation="4dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="18dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:tint="@color/app_yellow_1"
+                        android:src="@drawable/money_menu"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                    <TextView
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        style="@style/text_regular"
+                        android:textColor="@color/grey_700"
+                        android:text="@string/pack_value"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:gravity="center"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/receiving_value"
+                        android:layout_weight="1"
+                        style="@style/text_regular"
+                        android:textColor="@color/red_800"
+                        android:text="@string/pack_value"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/currency_txt2"
+                        android:gravity="center"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        style="@style/text_regular"
+                        android:textColor="@color/grey_700"
+                        android:text="@string/rs"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                </LinearLayout>
+
+                <!--// receiver total price -->
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:elevation="4dp"
+                    android:paddingLeft="18dp"
+                    android:paddingRight="18dp"
+                    android:paddingTop="6dp"
+                    android:paddingBottom="6dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:tint="@color/app_yellow_1"
+                        android:src="@drawable/money_bag"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                    <TextView
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        style="@style/text_regular"
+                        android:textColor="@color/grey_700"
+                        android:text="@string/package_details_total_price"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:gravity="center"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:id="@+id/receiving_total_price"
+                        android:layout_weight="1"
+                        style="@style/text_regular"
+                        android:textColor="@color/green_900"
+                        android:text="60"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <TextView
+                        android:id="@+id/currency_txt3"
+                        android:gravity="center"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginLeft="8dp"
+                        android:layout_weight="1"
+                        style="@style/text_regular"
+                        android:textColor="@color/grey_700"
+                        android:text="@string/rs"
+                        android:textSize="@dimen/text_size_small"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp" />
+                </LinearLayout>
+
+
+
+
+
+
+            </LinearLayout>
+            <!--// receiving info sec-->
+
+
+
+            <include layout="@layout/pager_bullet_view"/>
+
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_margin="16dp"
+                android:layout_marginBottom="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/accent_rounded_button_layout_style"
+                android:id="@+id/next"
+                >
+                <TextView
+                    android:id="@+id/next_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/primary_text_view_style"
+                    android:text="@string/next"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/progressView"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+</android.support.v7.widget.CardView>

@@ -1,0 +1,79 @@
+<FrameLayout android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:background="@color/white"
+        android:orientation="vertical"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.madar.madardemo.Fragment.AddOrder.ReciverInfo.MapLinkFragment">
+
+
+
+        <FrameLayout
+            android:layout_marginRight="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/custom_image_edittext_compound_layout"
+            >
+
+            <ImageView
+                style="@style/custom_image_edittext_compound_imageview"
+                android:src="@drawable/link"
+                />
+
+            <EditText
+                android:id="@+id/map_link_input"
+                style="@style/custom_image_edittext_compound_edittext"
+                android:hint="@string/map_link"
+                android:imeOptions="actionDone"
+                />
+
+            <ImageView
+
+                android:layout_gravity="end|bottom"
+                android:id="@+id/search"
+                style="@style/custom_image_edittext_compound_imageview"
+                android:src="@drawable/magnifier"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginBottom="16dp"
+            android:id="@+id/map_container"
+            android:background="@color/grey_50"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <fragment
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/map_link_map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"/>
+            />
+            <FrameLayout
+                android:background="@color/black_scrim"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+    <ProgressBar
+    android:layout_gravity="center"
+    android:id="@+id/progressView"
+    style="?android:attr/progressBarStyleLarge"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:visibility="gone" />
+
+
+</FrameLayout>
+

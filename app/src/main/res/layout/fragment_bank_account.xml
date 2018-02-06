@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:id="@+id/container"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            style="@style/fragment_layout_container_style"
+            >
+
+            <ImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:src="@drawable/money_bag"
+                android:layout_margin="24dp"
+                />
+
+            <FrameLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/custom_image_edittext_compound_layout"
+                >
+
+                <ImageView
+                    style="@style/custom_image_edittext_compound_imageview"
+                    android:src="@drawable/bank_building"
+                    />
+
+                <ImageView
+                    style="@style/custom_image_edittext_compound_imageview"
+                    android:src="@drawable/down_arrow"
+                    android:layout_gravity="bottom|end"/>
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/edittext_vert_margin"
+                    android:layout_marginBottom="@dimen/edittext_vert_margin"
+                    android:id="@+id/fragment_bank_account_bank_select_spinner"
+                    android:dropDownVerticalOffset="30dp"
+                    android:background="@null"
+                    />
+
+            </FrameLayout>
+
+            <FrameLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/custom_image_edittext_compound_layout"
+                >
+
+                <ImageView
+                    style="@style/custom_image_edittext_compound_imageview"
+                    android:src="@drawable/credit_card_black"
+                    />
+
+                <EditText
+                    android:maxLines="1"
+                    style="@style/custom_image_edittext_compound_edittext"
+                    android:id="@+id/fragment_bank_account_account_number_edit_text"
+                    android:hint="@string/account_number"
+                    />
+
+            </FrameLayout>
+
+
+            <FrameLayout android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/custom_image_edittext_compound_layout"
+                >
+
+                <ImageView
+                    style="@style/custom_image_edittext_compound_imageview"
+                    android:src="@drawable/profile_user_black"
+                    />
+
+                <EditText
+                    android:maxLines="1"
+                    style="@style/custom_image_edittext_compound_edittext"
+                    android:id="@+id/fragment_bank_account_account_holder_name_edit_text"
+                    android:hint="@string/account_owner_name"
+                    android:imeOptions="actionDone"
+                    />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="bottom"
+                >
+
+                <com.jcminarro.roundkornerlayout.RoundKornerLinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/confirm_rounded_button_layout_style"
+                    android:id="@+id/fragment_bank_account_save_button"
+                    android:layout_gravity="bottom"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/text_save"
+                        style="@style/text_bold"
+                        />
+
+                </com.jcminarro.roundkornerlayout.RoundKornerLinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:layout_gravity="center"
+        android:id="@+id/progressView"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:visibility="gone" />
+
+</FrameLayout>
