@@ -83,10 +83,10 @@ public class Validation {
         }else return true ;
     }
 
-    static public boolean validatePhone(EditText editText){
+    static public boolean validatePhone(EditText editText , String phone_numbers_length){
         if (!isEditTextEmpty(editText))
         {
-            if (!editText.getText().toString().matches("^[+\\d{3}]?\\d{11,20}$"))
+            if (!editText.getText().toString().matches("\\d{"+phone_numbers_length+"}"))
             {
                 editText.setError(MadarApplication.getInstance().getApplicationContext().getString(R.string.phone_error));
                 editText.requestFocus();

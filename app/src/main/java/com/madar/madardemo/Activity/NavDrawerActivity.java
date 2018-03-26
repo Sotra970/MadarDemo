@@ -1,11 +1,13 @@
 package com.madar.madardemo.Activity;
 
+import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.net.Uri;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
 import android.support.annotation.NonNull;
@@ -49,12 +51,18 @@ import com.madar.madardemo.Fragment.ShowUSerBanksFragment;
 import com.madar.madardemo.Fragment.TransferSummaryFragment;
 import com.madar.madardemo.Listener.NavDrawerItemClickListener;
 import com.madar.madardemo.Model.NavDrawerPageItem;
+import com.madar.madardemo.Model.isFoundModel;
 import com.madar.madardemo.R;
+import com.madar.madardemo.SecureJobScheduler.Util;
+import com.madar.madardemo.Service.Injector;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * Created by Ahmed on 8/16/2017.
@@ -96,8 +104,12 @@ public class NavDrawerActivity extends FragmentSwitchActivity
         refresh_notfication();
         overridePendingTransition(R.anim.activity_slide_up, R.anim.fade_out);
         Log.e("incom" , "notifyallstore") ;
-        FirebaseMessaging.getInstance().subscribeToTopic("NotifyAllStore");
+        FirebaseMessaging.getInstance().subscribeToTopic("Country_0");
+        FirebaseMessaging.getInstance().subscribeToTopic("Country_"+MadarApplication.getUser().getCountryID());
+        FirebaseMessaging.getInstance().subscribeToTopic("Country_"+MadarApplication.getUser().getCountryID()+"_City_"+MadarApplication.getUser().getCityID());
 //        FirebaseMessaging.getInstance().subscribeToTopic("notifyalldrivers");
+
+        checkUser();
 
 
     }
@@ -221,6 +233,8 @@ public class NavDrawerActivity extends FragmentSwitchActivity
                 .transition(new DrawableTransitionOptions().crossFade())
                 .thumbnail(0.5f)
                 .into(profile_img) ;
+
+
 
     }
 
@@ -502,6 +516,7 @@ public class NavDrawerActivity extends FragmentSwitchActivity
     protected void onResume() {
         super.onResume();
         Log.e("onResume" , "onResume") ;
+
         LocalBroadcastManager.getInstance(getApplicationContext()).registerReceiver(
                 broadcastReceiver,
                 new IntentFilter( MyPreferenceManager.KEY_INCREMENT_NOTFICATiON));
@@ -522,5 +537,69 @@ public class NavDrawerActivity extends FragmentSwitchActivity
         LocalBroadcastManager.getInstance(this).registerReceiver(broadcastReceiver , new IntentFilter(Config.UPDATE_USER_PROFILE));
     }
 
+
+    Call<isFoundModel> isFoundModelCall;
+    CountDownTimer timer ;
+    boolean firstCheck  = true ;
+    void checkUser(){
+        if (MadarApplication.getInstance().getPrefManager().getUser() ==null){
+            return;
+        }
+          timer  = new CountDownTimer( firstCheck ? 3000 : 1*60*1000  , 1000 ) {
+            @Override
+            public void onTick(long l) {
+                firstCheck = false ;
+            }
+
+            @Override
+            public void onFinish()  {
+                firstCheck =false ;
+                checkSecurerequest();
+            }
+        };
+          timer.start();
+    }
+
+
+    void checkSecurerequest(){
+        timer.cancel();
+        try {
+            if (MadarApplication.getInstance().getPrefManager().getUser() ==null){
+                return;
+            }
+            isFoundModelCall = Injector.Api().iSFound(MadarApplication.getInstance().getPrefManager().getUser().getSecret()) ;
+            isFoundModelCall.enqueue(new Callback<isFoundModel>() {
+                @Override
+                public void onResponse(Call<isFoundModel> call, Response<isFoundModel> response) {
+                    if (response !=null && response.body()!=null){
+                        if (response.body().getResponseItem().isSuccessful()){
+                            checkUser();
+                        }else {
+                            MadarApplication.getInstance().getPrefManager().clear(false);
+                            timer.cancel();
+                            AlertDialog  alertDialog =  new AlertDialog.Builder(NavDrawerActivity.this)
+                                    .setMessage(R.string.please_relogin)
+                                    .setCancelable(false)
+                                    .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialogInterface, int i) {
+                                            MadarApplication.getInstance().getPrefManager().clear();
+
+                                        }
+                                    }).create();
+                            alertDialog.show();
+                        }
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<isFoundModel> call, Throwable t) {
+                    checkUser();
+                }
+            });
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
 
 }

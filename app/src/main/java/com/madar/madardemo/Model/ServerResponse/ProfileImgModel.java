@@ -9,6 +9,11 @@ import java.io.Serializable;
  public  class ProfileImgModel implements Serializable {
     String id , path ;
 
+    public ProfileImgModel(String id, String path) {
+        this.id = id ;
+        this.path = path  ;
+    }
+
     public String getId() {
         return id;
     }

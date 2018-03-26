@@ -114,7 +114,11 @@ public abstract class BaseFragment extends Fragment {
                 showNoConn(new NoConn() {
                     @Override
                     public void onRetry() {
-                        get_cities(cityDataFetch);
+                        try {
+                            get_cities(cityDataFetch);
+                        }catch (Exception e){
+                            e.printStackTrace();
+                        }
                     }
                 });
             }

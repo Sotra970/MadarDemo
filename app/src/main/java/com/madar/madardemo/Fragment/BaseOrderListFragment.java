@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -80,18 +81,13 @@ public class BaseOrderListFragment extends BaseFragment
     @Override
     public void onResume() {
         super.onResume();
-        //initOrderCases();
     }
 
-    //protected abstract boolean approveOrder(OrderItem orderItem);
 
     private void initRecyclerView(final RecyclerView recyclerView){
         if(recyclerView != null){
             orderListAdapter =
-                    new OrderListAdapter(
-                            null,
-                            getContext(),
-                            new AdapterItemClickListener() {
+                    new OrderListAdapter(null, getContext(), new AdapterItemClickListener() {
                                 @Override
                                 public void onAdapterItemClicked(View itemView) {
                                     if(recyclerView != null && itemView != null){
@@ -116,47 +112,6 @@ public class BaseOrderListFragment extends BaseFragment
         }
     }
 
-    /*private void initOrderCases(){
-        showLoading(true);
-
-        final Call<GetOrderCasesResponse> receiptItemCall = Injector.Api()
-                .getOrderCases("GetOrderCases");
-
-        receiptItemCall.enqueue(new CallbackWithRetry<GetOrderCasesResponse>(
-                5,
-                3000,
-                receiptItemCall,
-                new onRequestFailure() {
-                    @Override
-                    public void onFailure() {
-                        Log.e("order case Request", "failure");
-                        showNoConn(
-                                new NoConn() {
-                                    @Override
-                                    public void onRetry() {
-                                        initOrderCases();
-                                    }
-                                }
-                        );
-
-                        showLoading(false);
-                    }
-                })
-        {
-
-            @Override
-            public void onResponse(Call<GetOrderCasesResponse> call, Response<GetOrderCasesResponse> response) {
-                GetOrderCasesResponse orderCasesResponse = response.body();
-                if(orderCasesResponse != null){
-                    ArrayList<OrderCase> orderCases = orderCasesResponse.getOrderCases();
-                    //orderListAdapter.setOrderCases(orderCases);
-                }
-
-                showLoading(false);
-            }
-        });
-    }*/
-
     protected void initShowOrderItems()
     {
         boolean dataShown = false;
@@ -180,6 +135,8 @@ public class BaseOrderListFragment extends BaseFragment
     }
 
     private void onOrderItemClicked(OrderItem orderItem){
+        if (orderItem!=null) ;
+        Log.e("BaseOrderListFragment" , "onOrderItemClicked" + orderItem.toString()) ;
         Intent intent = new Intent(getContext(), OrderDetailsActivity.class);
         intent.putExtra("extra_order" , orderItem) ;
         startActivity(intent);

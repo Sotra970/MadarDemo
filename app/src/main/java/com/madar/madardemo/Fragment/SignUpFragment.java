@@ -1,5 +1,6 @@
 package com.madar.madardemo.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -19,15 +20,19 @@ import android.widget.Toast;
 
 import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.common.SignInButton;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.madar.madardemo.Activity.FragmentSwitchActivity;
+import com.madar.madardemo.Activity.NavDrawerActivity;
 import com.madar.madardemo.Activity.SocialActivity;
 import com.madar.madardemo.Adapter.GenericSpinnerArrayAdapter;
+import com.madar.madardemo.AppManger.MadarApplication;
 import com.madar.madardemo.Fragment.Abstract.BaseFragment;
 import com.madar.madardemo.Interface.NoConn;
 import com.madar.madardemo.Model.CityModel;
 import com.madar.madardemo.Model.CountryModel;
 import com.madar.madardemo.Model.ProfileItem;
 import com.madar.madardemo.Model.ServerResponse.CityListResponse;
+import com.madar.madardemo.Model.ServerResponse.UserLoginResponse;
 import com.madar.madardemo.Model.ServerResponse.UserRegResponse;
 import com.madar.madardemo.Model.SocialUser;
 import com.madar.madardemo.R;
@@ -75,6 +80,9 @@ public class SignUpFragment extends BaseFragment implements View.OnClickListener
 
     @BindView(R.id.phone_number_input)
     EditText phone_number_input ;
+
+    @BindView(R.id.phone_number_code_input)
+    EditText phone_number_code_input ;
 
 
     @BindView(R.id.email_input)
@@ -142,17 +150,23 @@ public class SignUpFragment extends BaseFragment implements View.OnClickListener
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 selectCountryModel = countryAdapter.getItem(i);
                 clearCities();
-                if (!selectCountryModel.getID().equals("0"))
-                get_cities(new CityDataFetch() {
-                    @Override
-                    public void onDataFetch(ArrayList<CityModel> av_cities) {
-                        try {
-                           clearCities();
-                            cityModels.addAll(av_cities);
-                            cityAdapter.notifyDataSetChanged();
-                        }catch (Exception e){}
-                    }
-                },selectCountryModel.getID());
+                if ( selectCountryModel !=null && !selectCountryModel.getID().equals("0")){
+                    get_cities(new CityDataFetch() {
+                        @Override
+                        public void onDataFetch(ArrayList<CityModel> av_cities) {
+                            try {
+                                clearCities();
+                                cityModels.addAll(av_cities);
+                                cityAdapter.notifyDataSetChanged();
+                            }catch (Exception e){}
+                        }
+                    },selectCountryModel.getID());
+                    phone_number_input.setEnabled(true);
+                    phone_number_code_input.setText("+"+selectCountryModel.getPhone_Code());
+                }else {
+                    phone_number_input.setEnabled(false);
+                    phone_number_code_input.setText("+00");
+                }
             }
 
             @Override
@@ -308,9 +322,6 @@ public class SignUpFragment extends BaseFragment implements View.OnClickListener
         else family_name = family_name_input.getText().toString() ;
 
 
-        if ( Validation.isEditTextEmpty(phone_number_input) )
-            return;
-        else phone = phone_number_input.getText().toString() ;
 
 
         if ( Validation.validateEmail(email_input) )
@@ -322,6 +333,10 @@ public class SignUpFragment extends BaseFragment implements View.OnClickListener
             return;
         if ( Validation.validate_spinner_mu(citySpinner , selectCityModel.getID()) )
             return;
+
+        if ( Validation.validatePhone(phone_number_input , selectCountryModel.getPhone_Numbers_Length()) )
+            return;
+        else phone = phone_number_input.getText().toString() ;
 
 
 
@@ -341,6 +356,7 @@ public class SignUpFragment extends BaseFragment implements View.OnClickListener
         profileItem.setEMail(email);
         profileItem.setCityID(selectCityModel.getID());
         profileItem.setCountryID(selectCountryModel.getID());
+        profileItem.setCountryCode("+"+selectCountryModel.getPhone_Code());
 
         profileItem.setPass(password);
         profileItem.setRequest("RegComp");
@@ -375,28 +391,19 @@ public class SignUpFragment extends BaseFragment implements View.OnClickListener
                 UserRegResponse res = response.body();
                 int code  = res.getResponseItem().getStatusCode() ;
                 if( code== 200){
-                    showLongToast(containerHolder , getString(R.string.regstraion_scuccess)  );
-                    clearStack(new FragmentSwitchActivity.ClearStack() {
-                        @Override
-                        public void onClearFinish() {
-                            showFragment(LoginFragment.getInstance() , false);
-                        }
-                    });
-//                    showFragment(LoginFragment.getInstance() , true);
-
-//                    showFragment(LoginFragment.getInstance(), true);
-
+                    loginUser(email,password);
                 }else if (code == 401 ){
                     email_input.setError(getString(R.string.duplicated));
                     email_input.requestFocus();
+                    showLoading(false);
                 }
 
                 else if (code == 402 ){
                     phone_number_input.setError(getString(R.string.duplicated));
                     phone_number_input.requestFocus();
+                    showLoading(false);
                 }
-
-                showLoading(false);
+;
             }
         });
 
@@ -471,16 +478,57 @@ public class SignUpFragment extends BaseFragment implements View.OnClickListener
 
     }
 
-//    public void showLoading(final boolean show) {
-//        try {
-//            int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
-//
-//            containerHolder.setVisibility(show ? View.GONE : View.VISIBLE);
-//
-//            progrssView.setVisibility(show ? View.VISIBLE : View.GONE);
-//
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
-//    }
+    private void loginUser(final String username , final String password){
+
+        Call<UserLoginResponse> apiInterface = Injector.Api().login("CompLogin",username, password);
+        apiInterface.enqueue(new CallbackWithRetry<UserLoginResponse>(5, 3000, apiInterface, new onRequestFailure() {
+            @Override
+            public void onFailure() {
+                showNoConn(new NoConn() {
+                    @Override
+                    public void onRetry() {
+                        loginUser(username,password);
+                    }
+                });
+                showLoading(false);
+            }
+        }) {
+            @Override
+            public void onResponse(Call<UserLoginResponse> call, Response<UserLoginResponse> response) {
+                UserLoginResponse res = response.body();
+                if(res.getResponseItem() !=null && res.getResponseItem().getStatusCode() == 200){
+                    String secret = res.getSecret();
+                    ProfileItem profileItem = res.getUserInfo().get(0) ;
+                    profileItem.setSecret(secret);
+                    if (profileItem.getActivated().equals("1")){
+                        MadarApplication.getInstance().getPrefManager().storeUser(profileItem);
+                        FirebaseMessaging.getInstance().subscribeToTopic(profileItem.getSecret());
+                        startHome();
+                    }
+                    else {
+                        showFragment(ConfirmationMessgaeSentFragment.getInstance(profileItem) , false);
+                    }
+                }
+                else {
+                    Toast.makeText(getContext() , getString(R.string.invalid_username_pass) , Toast.LENGTH_LONG).show();
+                    showLoading(false);
+                }
+
+
+            }
+        });
+
+    }
+
+
+
+    private void startHome() {
+        Intent i = new Intent(getContext(), NavDrawerActivity.class);
+        startActivity(i);
+        getActivity().overridePendingTransition(R.anim.fade_in, R.anim.fade_out);
+        getActivity().finish();
+    }
+
+
+
 }

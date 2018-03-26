@@ -41,8 +41,14 @@ public class ContactUsFragment extends TitledFragment {
 
     @OnClick(R.id.fragment_contact_us_go_to_facebook)
     void goFace(){
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Madar_Ex-180429922514630"));
-        startActivity(i);
+        Intent intent ;
+        try {
+            getActivity().getPackageManager().getPackageInfo("com.facebook.katana", 0);
+            intent  =  new Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/145169272949521"));
+        } catch (Exception e) {
+            intent =  new Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.face_link)));
+        }
+        startActivity(intent);
     }
 
     @OnClick(R.id.fragment_contact_us_go_to_twitter)

@@ -15,6 +15,7 @@ import com.madar.madardemo.AppManger.MadarApplication;
 import com.madar.madardemo.Fragment.MainFragment;
 import com.madar.madardemo.Fragment.SplashFragment;
 import com.madar.madardemo.R;
+import com.madar.madardemo.SecureJobScheduler.LogoutDialogActivity;
 
 import pub.devrel.easypermissions.EasyPermissions;
 
@@ -31,7 +32,7 @@ public class SplashActivity extends SocialActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        showFragment(SplashFragment.getInstance(), null);
+        showFragment(SplashFragment.getInstance(), false);
 
         new Handler().postDelayed(new Runnable() {
             @Override
@@ -41,6 +42,7 @@ public class SplashActivity extends SocialActivity {
                 else startHome();
             }
         } , 3000);
+
 
 
       //  requestInternetPermissions();
@@ -58,7 +60,7 @@ public class SplashActivity extends SocialActivity {
 
 
     private void startLogin() {
-        showFragment(MainFragment.getInstance(), null);
+        showFragment(MainFragment.getInstance(), false);
     }
 
     private void requestInternetPermissions(){

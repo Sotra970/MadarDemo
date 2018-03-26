@@ -76,6 +76,7 @@ public class MapLinkFragment extends AddOrderBaseFragment implements OnMapReadyC
             setupMap();
 //            map_link_input.addTextChangedListener(new MyTextWatcher(map_link_input) );
         }
+        setupMap();
         return v ;
     }
 
@@ -173,7 +174,7 @@ public class MapLinkFragment extends AddOrderBaseFragment implements OnMapReadyC
                        public void onFinish(AddressDetailsResponse.AddressDetailsData data) {
                            Log.e(TAG, "latlung " + LatLng);
                            createCurrentPosMarker(LatLng);
-                           moveCamera(LatLng , 10);
+                           forcemoveCamera(LatLng , 16);
                            getOrderModel().setReciverMapCity(data.getCountry());
                            getOrderModel().setDeleviry_Place(latLungModel.getLatitude()+","+latLungModel.getLongitude());
 

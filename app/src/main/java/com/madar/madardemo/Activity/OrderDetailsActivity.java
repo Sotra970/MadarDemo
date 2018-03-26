@@ -94,7 +94,7 @@ public class OrderDetailsActivity extends FragmentSwitchActivity {
                         orderItem = response.body().getOrders().get(0);
                         showOrderDetailsFragment();
                     }
-                    showLoading(false);
+//                    showLoading(false);
                 }
             });
         }

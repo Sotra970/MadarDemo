@@ -1,8 +1,11 @@
 package com.madar.madardemo.AppManger;
 
+import android.app.ActivityManager;
+import android.content.ComponentName;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.os.Build;
 import android.support.multidex.MultiDexApplication;
 import android.util.Log;
 
@@ -12,8 +15,10 @@ import com.twitter.sdk.android.core.Twitter;
 import com.twitter.sdk.android.core.TwitterAuthConfig;
 import com.twitter.sdk.android.core.TwitterConfig;
 
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.logging.Handler;
 
 import retrofit2.Retrofit;
 
@@ -59,6 +64,7 @@ public class MadarApplication extends MultiDexApplication {
 
     }
 
+
     public static ExecutorService getExecutorService(){
         if(executorService == null){
             int threadNum = Runtime.getRuntime().availableProcessors();
@@ -99,5 +105,32 @@ public class MadarApplication extends MultiDexApplication {
 
     public static String getCurrency() {
         return " ";
+    }
+
+    boolean isAlive = false ;
+    public static boolean isAlive(){
+        if (getInstance() != null && getInstance().getApplicationContext() !=null)
+            return true ;
+        else return false ;
+    }
+
+
+    public static boolean isForeground(Context context) {
+
+         ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+         List<ActivityManager.RunningAppProcessInfo> appProcesses = activityManager.getRunningAppProcesses();
+         if (appProcesses == null) {
+             Log.e("isForeground" , "false")       ;
+             return false;
+         }
+         final String packageName = context.getPackageName();
+         for (ActivityManager.RunningAppProcessInfo appProcess : appProcesses) {
+             if (appProcess.importance == ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND && appProcess.processName.equals(packageName)) {
+                Log.e("isForeground" , "true")       ;
+                 return true;
+             }
+         }
+         Log.e("isForeground" , "false")       ;
+         return false;
     }
 }

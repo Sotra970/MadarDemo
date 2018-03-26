@@ -16,6 +16,11 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+
+    <style name="AppTheme.Transluent" parent="AppTheme">
+       <item name="android:windowBackground">@color/black_scrim</item>
+    </style>
+
     <style name="external_ac_theme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -123,7 +128,7 @@
 
     <style name="activity_toolbar_title" parent="text_bold">
         <item name="android:layout_gravity">center</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">@dimen/text_size_medium</item>
         <item name="android:textColor">@color/app_grey_1</item>
     </style>
 

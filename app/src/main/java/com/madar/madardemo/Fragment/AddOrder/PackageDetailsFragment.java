@@ -19,6 +19,7 @@ import com.madar.madardemo.AppManger.MadarApplication;
 import com.madar.madardemo.Fragment.Abstract.AddOrderBaseFragment;
 import com.madar.madardemo.Model.OrderItem;
 import com.madar.madardemo.R;
+import com.madar.madardemo.Util.TimeUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -115,7 +116,7 @@ public class PackageDetailsFragment extends AddOrderBaseFragment {
             try {
                 bind_data(orderItem);
             }catch (Exception e){
-
+                e.printStackTrace();
             }
 
 
@@ -124,10 +125,16 @@ public class PackageDetailsFragment extends AddOrderBaseFragment {
     }
 
 
+    // case calling from order create pager
+
     @Override
     public void onPageSelected(int pos) {
         setupPagerPullet(true , pos);
-        bind_data(getAddOrderActivity().orderItem);
+        try {
+            bind_data(getAddOrderActivity().orderItem);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
         next_text.setText(getString(R.string.order_confirm));
         next.setVisibility(View.VISIBLE);
     }
@@ -143,35 +150,48 @@ public class PackageDetailsFragment extends AddOrderBaseFragment {
          sender_address_text.setText(orderItem.getFrom_District()); ;
         sender_address_note_text.setText(orderItem.getPlace_Detail()); ;
 
-        currency_txt.setText(MadarApplication.getUser().getCurrency_Code());
-        currency_txt2.setText(MadarApplication.getUser().getCurrency_Code());
-        currency_txt3.setText(MadarApplication.getUser().getCurrency_Code());
+        currency_txt.setText(MadarApplication.getUser().getCurrency());
+        currency_txt2.setText(MadarApplication.getUser().getCurrency());
+        currency_txt3.setText(MadarApplication.getUser().getCurrency());
 
          receiver_name_text.setText(orderItem.getReceiver_Name()); ;
          receiver_address_text.setText(orderItem.getTo_District()); ;
 
-        String time =   getString(R.string.text_from) + orderItem.getTime_From()
-                +"  " +
-                getString(R.string.text_to) + orderItem.getTime_To() ;
 
-         package_details_time.setText(
-               time
-         );
+         Log.e("PackageDetails" ,"from : " +  orderItem.getTime_From()+"") ;
+         Log.e("PackageDetails" ,"to : " +  orderItem.getTime_To()+"") ;
+
+         String time_from = TimeUtils.changeTimeFormatFromHmsToHma(orderItem.getTime_From());
+         String time_to = TimeUtils.changeTimeFormatFromHmsToHma(orderItem.getTime_To());
+         String time =   getString(R.string.text_from) + time_from + getString(R.string.text_to) + time_to ;
+
+         package_details_time.setText(time);
+
         orderItem.initDate();
         package_details_date.setText(orderItem.getParsedDate()); ;
+
+        Log.e("PackageDetails" ,"getTitle : " +  orderItem.getTitle()+"") ;
         package_details_title.setText(orderItem.getTitle()); ;
+
+
         package_details_notes.setText(orderItem.getNote()); ;
 
 
 
-         receiving_price.setText(orderItem.getShip_Price()); ;
-         receiving_payment_method.setText(orderItem.getPayment_Method_Name()); ;
+         receiving_price.setText(orderItem.getShip_Price());
+        Log.e("PackageDetails" ,"getGood_Price : " +  orderItem.getPayment_Method_Name()+"") ;
+        receiving_payment_method.setText(orderItem.getPayment_Method_Name()); ;
 
-
+        Log.e("PackageDetails" ,"getGood_Price : " +  orderItem.getGood_Price()+"") ;
         receiving_value.setText(orderItem.getGood_Price()); ;
 
+
         double p1 = Double.parseDouble(orderItem.getShip_Price());
+        Log.e("PackageDetails" ,"getShip_Priced : " +  p1+"") ;
+
         double p2 = Double.parseDouble(orderItem.getGood_Price());
+        Log.e("PackageDetails" ,"getGood_Priced : " +  p2+"") ;
+
         double total = p1+p2 ;
 
         receiving_total_price.setText(total+"");

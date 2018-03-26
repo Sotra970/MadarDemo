@@ -3,6 +3,7 @@ package com.madar.madardemo.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
@@ -17,8 +18,7 @@ import com.madar.madardemo.Adapter.BankArrayAdapter;
 import com.madar.madardemo.Adapter.FavsArrayAdapter;
 import com.madar.madardemo.AppManger.Config;
 import com.madar.madardemo.AppManger.MadarApplication;
-import com.madar.madardemo.Fragment.Abstract.AddOrderBaseFragment;
-import com.madar.madardemo.Fragment.Abstract.BaseFragment;
+import com.madar.madardemo.Fragment.Abstract.*;
 import com.madar.madardemo.Interface.NoConn;
 import com.madar.madardemo.Model.BankModel;
 import com.madar.madardemo.Model.FavLocationModel;
@@ -42,7 +42,7 @@ import retrofit2.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ShowUSerBanksFragment extends BaseFragment {
+public class ShowUSerBanksFragment extends com.madar.madardemo.Fragment.Abstract.TitledFragment {
 
 
     public ShowUSerBanksFragment() {
@@ -112,10 +112,12 @@ public class ShowUSerBanksFragment extends BaseFragment {
                         showLoading(false);
                     }else {
                         no_items.setVisibility(View.VISIBLE);
+                        update(new ArrayList<BankModel>());
                         showLoading(false);
                     }
                 }else{
                     no_items.setVisibility(View.VISIBLE);
+                    update(new ArrayList<BankModel>());
                     showLoading(false);
                 }
 
@@ -177,5 +179,9 @@ public class ShowUSerBanksFragment extends BaseFragment {
         showFragment(AddBankAccountFragment.getInstance() , true);
     }
 
-
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        setTitle(R.string.nav_drawer_title_bank_account);
+    }
 }

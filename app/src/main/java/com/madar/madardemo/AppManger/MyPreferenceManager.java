@@ -64,6 +64,7 @@ public class MyPreferenceManager {
     private static final String KEY_USER_CityName = "user_city";
     private static final String KEY_USER_COUNTRY_ID = "country_id";
     private static final String KEY_USER_COUNTRY_NAME = "country_name";
+    private static final String KEY_USER_COUNTRY_CODE = "country_CODE";
     private static final String KEY_USER_District = "user_dis";
     private static final String KEY_USER_IMG = "user_img";
     private static final String KEY_USER_Secret = "user_secret";
@@ -100,6 +101,7 @@ public class MyPreferenceManager {
         editor.putString(KEY_USER_CityName, user.getCityName());
         editor.putString(KEY_USER_COUNTRY_ID ,  user.getCountryID());
         editor.putString(KEY_USER_COUNTRY_NAME, user.getCountryName());
+        editor.putString(KEY_USER_COUNTRY_CODE, user.getCountryCode());
         editor.putString(KEY_CURRENCY ,  user.getCurrency());
         editor.putString(KEY_CURRENCY_CODE, user.getCurrency_Code());
         editor.putString(KEY_USER_District , user.getDistrict());
@@ -127,6 +129,7 @@ public class MyPreferenceManager {
              String Secret;
              String curency;
              String currency_code;
+             String CountryCode;
 
 
 
@@ -141,8 +144,9 @@ public class MyPreferenceManager {
             CityName  = pref.getString(KEY_USER_CityName, " ");
             CountryID  = pref.getString(KEY_USER_COUNTRY_ID, " ");
             CountryName  = pref.getString(KEY_USER_COUNTRY_NAME, " ");
+            CountryCode  = pref.getString(KEY_USER_COUNTRY_CODE, " ");
             currency_code  = pref.getString(KEY_CURRENCY_CODE  , " ");
-            curency  = pref.getString(KEY_USER_COUNTRY_NAME, " ");
+            curency  = pref.getString(KEY_CURRENCY, " ");
             District  = pref.getString(KEY_USER_District, "");
             Image  = pref.getString(KEY_USER_IMG,Config.temp_url);
             pass  = pref.getString(KEY_USER_PASS,"");
@@ -165,6 +169,7 @@ public class MyPreferenceManager {
             userModel.setDistrict(District);
             userModel.setImage(Image);
             userModel.setPass(pass);
+            userModel.setCountryCode(CountryCode);
 
             return userModel;
         }
@@ -176,6 +181,18 @@ public class MyPreferenceManager {
         editor.clear();
         editor.commit();
 
+        Intent intent = new Intent(_context, SplashActivity.class);
+        ComponentName cn = intent.getComponent();
+        Intent mainIntent = Intent  .makeRestartActivityTask(cn);
+        _context.startActivity(mainIntent);
+    }
+
+
+    public void clear(boolean restart) {
+        editor.clear();
+        editor.commit();
+        if (!restart)
+            return;
         Intent intent = new Intent(_context, SplashActivity.class);
         ComponentName cn = intent.getComponent();
         Intent mainIntent = Intent  .makeRestartActivityTask(cn);

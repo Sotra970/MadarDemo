@@ -141,7 +141,7 @@ public class PackageContentInfoFragment extends AddOrderBaseFragment {
         size_big_rd.setChecked(false);
         size_small_rd.setChecked(true);
         getOrderModel().setShippingSize(1);
-        getprice(getString(R.string.car_size)+getString(R.string.small) ,size_small_rd );
+        getprice(getString(R.string.car_size)+getString(R.string.small) ,size_small_rd  , 0);
     }
 
 
@@ -151,7 +151,7 @@ public class PackageContentInfoFragment extends AddOrderBaseFragment {
         size_big_rd.setChecked(false);
         size_mid_rd.setChecked(true);
         getOrderModel().setShippingSize(2);
-        getprice(getString(R.string.car_size)+getString(R.string.mid) , size_mid_rd);
+        getprice(getString(R.string.car_size)+getString(R.string.mid) , size_mid_rd,0);
     }
 
 
@@ -162,7 +162,7 @@ public class PackageContentInfoFragment extends AddOrderBaseFragment {
         size_small_rd.setChecked(false);
         size_big_rd.setChecked(true);
         getOrderModel().setShippingSize(3);
-        getprice(getString(R.string.car_size)+getString(R.string.big) , size_big_rd);
+        getprice(getString(R.string.car_size)+getString(R.string.big) , size_big_rd,0);
     }
 
 
@@ -173,7 +173,7 @@ public class PackageContentInfoFragment extends AddOrderBaseFragment {
         type_cold.setChecked(false);
         type_normal.setChecked(true);
         getOrderModel().setCar_Type_ID(1);
-        getprice(getString(R.string.car_type)+getString(R.string.normal),type_normal);
+        getprice(getString(R.string.car_type)+getString(R.string.normal),type_normal , 1 );
     }
 
 
@@ -183,7 +183,7 @@ public class PackageContentInfoFragment extends AddOrderBaseFragment {
         type_hot.setChecked(false);
         type_cold.setChecked(true);
         getOrderModel().setCar_Type_ID(2);
-        getprice(getString(R.string.car_type)+getString(R.string.cold) , type_cold);
+        getprice(getString(R.string.car_type)+getString(R.string.cold) , type_cold,1);
     }
 
 
@@ -194,7 +194,7 @@ public class PackageContentInfoFragment extends AddOrderBaseFragment {
         type_cold.setChecked(false);
         type_hot.setChecked(true);
         getOrderModel().setCar_Type_ID(3);
-        getprice(getString(R.string.car_type)+getString(R.string.hot) , type_hot);
+        getprice(getString(R.string.car_type)+getString(R.string.hot) , type_hot,1);
     }
 
 
@@ -289,7 +289,7 @@ public class PackageContentInfoFragment extends AddOrderBaseFragment {
 
 
 
-    void getprice(final String last_action , final RadioButton current_rd){
+    void getprice(final String last_action , final RadioButton current_rd , final int type){
         if (getOrderModel().getCar_Type_ID()  == 0 || getOrderModel().getShippingSize()  == 0 ){
             currency_txt.setText("--");
             return;
@@ -301,7 +301,8 @@ public class PackageContentInfoFragment extends AddOrderBaseFragment {
                orderModel.getFrom_City() ,
                 orderModel.getTo_City() ,
                 orderModel.getShippingSize(),
-                orderModel.getCar_Type_ID()
+                orderModel.getCar_Type_ID(),
+                MadarApplication.getUser().getSecret()
         );
         call.enqueue(new CallbackWithRetry<PriceResponse>(5, 3000, call, new onRequestFailure() {
             @Override
@@ -309,7 +310,7 @@ public class PackageContentInfoFragment extends AddOrderBaseFragment {
                 showNoConn(new NoConn() {
                     @Override
                     public void onRetry() {
-                        getprice(last_action , current_rd);
+                        getprice(last_action , current_rd , type);
 
                     }
                 });
@@ -323,7 +324,7 @@ public class PackageContentInfoFragment extends AddOrderBaseFragment {
                         try {
                             String price  = response.body().data.get(0).Price ;
                             price_txt.setText(price);
-                            currency_txt.setText(MadarApplication.getUser().getCurrency_Code());
+                            currency_txt.setText(MadarApplication.getUser().getCurrency());
                             showLoading(false);
                         }catch (Exception e){
                             price_txt.setText("--");
@@ -333,7 +334,14 @@ public class PackageContentInfoFragment extends AddOrderBaseFragment {
                             showLongToast(containerHolder , last_action+getString(R.string.unavailable_now));
                         }
                     }else {
-                        price_txt.setText("--");
+
+                        if (type == 0 )
+                            getOrderModel().setShippingSize(0);
+                        if (type ==1)
+                        getOrderModel().setCar_Type_ID(0)  ;
+
+
+                            price_txt.setText("--");
                         currency_txt.setText("--");
                         current_rd.setChecked(false);
                         showLoading(false);

@@ -180,6 +180,7 @@ public class ProfileFragment extends TitledFragment{
                     .thumbnail(0.5f)
                     .into(profile_bg);
 
+            Log.e("profileImage" , profileItem.getImage()) ;
             Glide.with(this)
                     .load(profileItem.getImage() )
                     .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.ALL))
@@ -252,26 +253,41 @@ public class ProfileFragment extends TitledFragment{
 
         showLoading(true);
 
-        final ProfileItem profileItem = new ProfileItem() ;
-        profileItem.setName(store_name);
-        profileItem.setFirstName(fits_name);
-        profileItem.setLastName(family_name);
-        profileItem.setPhone(phone);
-        profileItem.setEMail(email);
-        profileItem.setCityID(selectCityModel.getID());
-        profileItem.setCountryID(selectCountryModel.getID());
-        profileItem.setPass(password);
+        final ProfileItem tempprofileItem = new ProfileItem() ;
+        tempprofileItem.setName(store_name);
+        tempprofileItem.setFirstName(fits_name);
+        tempprofileItem.setLastName(family_name);
+        tempprofileItem.setPhone(phone);
+        tempprofileItem.setEMail(email);
+        tempprofileItem.setCityID(selectCityModel.getID());
+        tempprofileItem.setCountryID(selectCountryModel.getID());
+        tempprofileItem.setCountryCode("+"+selectCountryModel.getPhone_Code());
+        tempprofileItem.setCurrency_Code(selectCountryModel.getCurrency_Code());
+        tempprofileItem.setCurrency(selectCountryModel.getCurrency());
+        tempprofileItem.setID(MadarApplication.getInstance().getPrefManager().getUser().getID());
+        tempprofileItem.setPass(password);
         if (!activity().getProfile_upload_img_result().isEmpty()){
             profile_img_model = activity().getProfile_upload_img_result().get(0);
-            profileItem.setImage(profile_img_model.getId() );
+            tempprofileItem.setImage(profile_img_model.getId() );
         }else {
-            profileItem.setImage(this.profileItem.getImage()) ;
+            String jpeg = this.profileItem.getImage().substring((this.profileItem.getImage().lastIndexOf("/")+1) , this.profileItem.getImage().length()) ;
+            String id =  jpeg.substring(0 , jpeg.indexOf(".")) ;
+            profile_img_model = new ProfileImgModel(id , "mod" );
+            tempprofileItem.setImage(id) ;
         }
 
-        profileItem.setRequest("UpdateUserData");
-        profileItem.setSecret(this.profileItem.getSecret());
+        tempprofileItem.setRequest("UpdateUserData");
+        tempprofileItem.setSecret(this.profileItem.getSecret());
 
-        Call<UpdateProfileResponse> apiInterface = Injector.Api().updateProfile(profileItem);
+
+        if (!tempprofileItem.getPhone().trim().equals(MadarApplication.getInstance().getPrefManager().getUser().getPhone())){
+            // verfy then update
+            showLoading(false);
+            showFragment(UpdateConfirmationFragment.getInstance(tempprofileItem,this) , true);
+            return;
+        }
+
+        Call<UpdateProfileResponse> apiInterface = Injector.Api().updateProfile(tempprofileItem);
         apiInterface.enqueue(new CallbackWithRetry<UpdateProfileResponse>(5, 3000, apiInterface, new onRequestFailure() {
             @Override
             public void onFailure() {
@@ -292,12 +308,7 @@ public class ProfileFragment extends TitledFragment{
                 if(res != null){
                     int code  = res.getStatus().getStatusCode() ;
                     if( code== 200){
-                        if (profile_img_model !=null)
-                        profileItem.setImage(Config.BASE_IMG_URL+profile_img_model.getPath());
-                        MadarApplication.getInstance().getPrefManager().storeUser(profileItem);
-                        Intent intent = new Intent(Config.UPDATE_USER_PROFILE);
-                        LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(intent);
-                        showLongToast(container , R.string.profile_updated);
+                       onUpdateSuccess(tempprofileItem);
                     }
                     else if (code == 401 ){
                         emailEditText.setError(getString(R.string.duplicated));
@@ -314,6 +325,16 @@ public class ProfileFragment extends TitledFragment{
             }
         });
 
+    }
+
+    public void onUpdateSuccess(ProfileItem profileItem) {
+        if (profile_img_model !=null)
+//            profileItem.setImage(Config.BASE_IMG_URL+ profile_img_model.getPath());
+            profileItem.setImage(Config.BASE_IMG_URL+ "/upload/"+profile_img_model.getId()+".jpg");
+        MadarApplication.getInstance().getPrefManager().storeUser(profileItem);
+        Intent intent = new Intent(Config.UPDATE_USER_PROFILE);
+        LocalBroadcastManager.getInstance(getActivity()).sendBroadcast(intent);
+        showLongToast(container , R.string.profile_updated);
     }
 
 
@@ -354,18 +375,22 @@ public class ProfileFragment extends TitledFragment{
                     get_cities(new CityDataFetch() {
                         @Override
                         public void onDataFetch(ArrayList<CityModel> av_cities) {
-                            clearCities();
-                            for (int i=0  ; i<av_cities.size() ;  i++){
-                                CityModel cityModel = av_cities.get(i);
-                                cityModels.add(cityModel);
-                                if (cityModel.getID().equals(MadarApplication.getInstance().getPrefManager().getUser().getCityID())){
-                                    user_city_pos = i ;
+                            try {
+                                clearCities();
+                                for (int i=0  ; i<av_cities.size() ;  i++){
+                                    CityModel cityModel = av_cities.get(i);
+                                    cityModels.add(cityModel);
+                                    if (cityModel.getID().equals(MadarApplication.getInstance().getPrefManager().getUser().getCityID())){
+                                        user_city_pos = i ;
+                                    }
                                 }
-                            }
 
-                            cityAdapter.notifyDataSetChanged();
-                            if (user_city_pos!=-1)
-                            citySpinner.setSelection(++user_city_pos);
+                                cityAdapter.notifyDataSetChanged();
+                                if (user_city_pos!=-1)
+                                    citySpinner.setSelection(++user_city_pos);
+                            }catch (Exception e){
+                                e.printStackTrace();
+                            }
                         }
                     },selectCountryModel.getID());
 

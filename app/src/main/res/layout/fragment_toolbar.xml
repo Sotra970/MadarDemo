@@ -20,64 +20,72 @@
         >
 
 
-        <TextView
-            android:id="@+id/activity_toolbar_title"
-            style="@style/activity_toolbar_title"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+        <LinearLayout
             android:gravity="center"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            />
-
-        <FrameLayout
-            android:layout_marginEnd="16dp"
-            android:layout_marginStart="16dp"
-            android:layout_gravity="end"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:layout_marginLeft="3dp"
-                android:layout_marginRight="3dp"
-                android:layout_marginTop="7dp"
-                android:layout_marginBottom="7dp"
-                android:scaleType="fitCenter"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_gravity="end|center_vertical"
-                android:src="@drawable/alarm_black"
-                android:onClick="onNotificationItemClicked"
-                android:id="@+id/fragment_toolbar_notification_icon"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:layout_weight="1"
+                android:id="@+id/activity_toolbar_title"
+                style="@style/activity_toolbar_title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
                 />
+
             <FrameLayout
-                android:elevation="3dp"
-                android:visibility="invisible"
-                android:id="@+id/messages_notification_count_con"
-                android:background="@drawable/white_circle"
-                android:layout_gravity="right"
-                android:minHeight="12dp"
-                android:minWidth="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_gravity="end|center"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-
-                <TextView
-                    android:minHeight="8dp"
-                    android:minWidth="8dp"
-                    android:textSize="8dp"
-                    android:layout_margin="2dp"
-                    android:text="0"
-                    android:id="@+id/messages_notification_count"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorAccent"
-                    android:gravity="center"
-                    android:layout_gravity="center"
+                <ImageView
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginRight="3dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
+                    android:scaleType="fitCenter"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="end|center_vertical"
+                    android:src="@drawable/alarm_black"
+                    android:onClick="onNotificationItemClicked"
+                    android:id="@+id/fragment_toolbar_notification_icon"
                     />
+                <FrameLayout
+                    android:elevation="3dp"
+                    android:visibility="invisible"
+                    android:id="@+id/messages_notification_count_con"
+                    android:background="@drawable/white_circle"
+                    android:layout_gravity="right"
+                    android:minHeight="12dp"
+                    android:minWidth="12dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:minHeight="8dp"
+                        android:minWidth="8dp"
+                        android:textSize="8dp"
+                        android:layout_margin="2dp"
+                        android:text="0"
+                        android:id="@+id/messages_notification_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorAccent"
+                        android:gravity="center"
+                        android:layout_gravity="center"
+                        />
+                </FrameLayout>
+
             </FrameLayout>
 
-        </FrameLayout>
-
+        </LinearLayout>
 
 
 

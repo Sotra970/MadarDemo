@@ -24,6 +24,7 @@
     <string name="hint_first_name">الاسم الاول</string>
     <string name="hint_last_name">اسم العائلة</string>
     <string name="hint_phone_number">رقم الجوال</string>
+    <string name="hint_phone_code_number">00</string>
     <string name="hint_email">البريد الالكتروني</string>
     <string name="hint_city">المدينة</string>
     <string name="hint_street">الحي</string>
@@ -63,7 +64,7 @@
 
     <string name="fragment_title_profile">الملف الشخصي</string>
     <string name="text_about_us">من نحن</string>
-    <string name="about_us">شركة مدار اكسبرس لشحن وتوصيل طلبات المتاجر الالكترونية والشركات والأفراد داخل مدينة الرياض في نفس اليوم مع خدمة الدفع عن الاستلام  وخارجها أيضاً من موقع الشركة او المتجر الى باب العميل عن طريق التطبيق او الموقع الالكتروني بكل سهولة وأمان كما نقدم أيضاً خدمة تخزين المنتجات وبضائع المتاجر الالكترونية حيث نقوم بتجهيز وتغليف الطلب وشحنه أو توصيله الى العميل بشكل مباشر ونتيح لك تفاصيل كاملة عن شحناتك ومبيعاتك.</string>
+    <string name="about_us">شركة مدار اكسبرس لشحن وتوصيل طلبات المتاجر الالكترونية والشركات والأفراد داخل المدن في نفس اليوم مع خدمة الدفع عن الاستلام  وخارجها أيضاً من موقع الشركة او المتجر الى باب العميل عن طريق التطبيق او الموقع الالكتروني بكل سهولة وأمان كما نقدم أيضاً خدمة تخزين المنتجات وبضائع المتاجر الالكترونية حيث نقوم بتجهيز وتغليف الطلب وشحنه أو توصيله الى العميل بشكل مباشر ونتيح لك تفاصيل كاملة عن شحناتك ومبيعاتك.</string>
     <string name="fragment_title_about_us">من نحن</string>
 
     <string name="msg_no_internet">لا يوجد اتصال بشبكة الانترنت \n الرجاء اعادة المحاولة</string>
@@ -263,6 +264,10 @@
     <string name="driver_location">مكان السائق </string>
     <string name="text_our_page_instagram">صفحتنا على إنستغرام</string>
     <string name="hint_country">الدولة</string>
+    <string name="face_link">https://facebook.com/MadarExpress</string>
+    <string name="twitter_link">https://twitter.com/Madar_Ex</string>
+    <string name="insta_link">https://www.instagram.com/Madar_Ex/</string>
+    <string name="please_relogin">هذا الحساب تم تسجيل ذخوله على جهاز اخر و لذلك يجب ان يسجل الخروج على هذا الجهاز</string>
 
 
 </resources>

@@ -143,25 +143,6 @@
 
                     </LinearLayout>
 
-                    <FrameLayout android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        style="@style/custom_image_edittext_compound_layout"
-                        >
-
-                        <ImageView
-                            style="@style/custom_image_edittext_compound_imageview"
-                            android:src="@drawable/old_mobile_phone"
-                            />
-
-                        <EditText
-                            android:maxLines="1"
-                            android:inputType="number"
-                            android:id="@+id/phone_number_input"
-                            style="@style/custom_image_edittext_compound_edittext"
-                            android:hint="@string/hint_phone_number"
-                            />
-
-                    </FrameLayout>
 
 
 
@@ -181,9 +162,11 @@
                             android:id="@+id/email_input"
                             style="@style/custom_image_edittext_compound_edittext"
                             android:hint="@string/hint_email"
+                            android:imeOptions="actionDone"
                             />
 
                     </FrameLayout>
+
 
 
                     <LinearLayout
@@ -302,6 +285,63 @@
 
                     </LinearLayout>
 
+
+
+                    <!--// phone area -->
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                        <FrameLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            style="@style/custom_image_edittext_compound_layout"
+                            >
+
+                            <ImageView
+                                style="@style/custom_image_edittext_compound_imageview"
+                                android:src="@drawable/old_mobile_phone"
+                                />
+
+                            <EditText
+                                android:minWidth="72dp"
+                                android:enabled="false"
+                                android:maxLines="1"
+                                android:inputType="none"
+                                android:id="@+id/phone_number_code_input"
+                                style="@style/custom_image_edittext_compound_edittext"
+                                android:hint="@string/hint_phone_code_number"
+                                />
+
+                        </FrameLayout>
+
+                        <FrameLayout
+                            android:layout_marginStart="16dp"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/custom_image_edittext_compound_layout"
+                            >
+
+                            <ImageView
+                                style="@style/custom_image_edittext_compound_imageview"
+                                android:src="@drawable/old_mobile_phone"
+                                />
+
+                            <EditText
+                                android:enabled="false"
+                                android:maxLines="1"
+                                android:inputType="number"
+                                android:id="@+id/phone_number_input"
+                                style="@style/custom_image_edittext_compound_edittext"
+                                android:hint="@string/hint_phone_number"
+                                />
+
+                        </FrameLayout>
+
+
+                    </LinearLayout>
                     <FrameLayout android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         style="@style/custom_image_edittext_compound_layout"

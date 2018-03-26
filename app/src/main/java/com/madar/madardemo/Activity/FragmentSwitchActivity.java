@@ -42,6 +42,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -77,14 +78,14 @@ public abstract class FragmentSwitchActivity extends LocalizedActivity {
             if (back){
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .setCustomAnimations(ENTER_ANIM , LEAVE_ANIM , ENTER_ANIM , LEAVE_ANIM)
+//                        .setCustomAnimations(ENTER_ANIM , LEAVE_ANIM )
                         .replace(R.id.main_activity_fragment_place_holder, fragment)
-                        .addToBackStack(null)
+                        .addToBackStack(Calendar.getInstance().getTimeInMillis()+"")
                         .commit();
             }else {
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .setCustomAnimations(ENTER_ANIM , LEAVE_ANIM , ENTER_ANIM , LEAVE_ANIM)
+//                        .setCustomAnimations(ENTER_ANIM , LEAVE_ANIM)
                         .replace(R.id.main_activity_fragment_place_holder, fragment)
                         .commit();
             }
@@ -98,14 +99,14 @@ public abstract class FragmentSwitchActivity extends LocalizedActivity {
             if (back){
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .setCustomAnimations(anim_enter , exit_anim)
+//                        .setCustomAnimations(anim_enter , exit_anim)
                         .replace(R.id.main_activity_fragment_place_holder, fragment)
-                        .addToBackStack(null)
+                        .addToBackStack(Calendar.getInstance().getTimeInMillis()+"")
                         .commit();
             }else {
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .setCustomAnimations(ENTER_ANIM , LEAVE_ANIM)
+//                        .setCustomAnimations(ENTER_ANIM , LEAVE_ANIM)
                         .replace(R.id.main_activity_fragment_place_holder, fragment)
                         .commit();
             }
@@ -114,14 +115,16 @@ public abstract class FragmentSwitchActivity extends LocalizedActivity {
 
 
     public void showFragment(Fragment fragment , String tag  ){
-        if(fragment != null){
-            getSupportFragmentManager()
-                    .beginTransaction()
-                    .setCustomAnimations(ENTER_ANIM , LEAVE_ANIM)
-                    .replace(R.id.main_activity_fragment_place_holder, fragment)
-                    .addToBackStack(tag)
-                    .commit();
-        }
+       try {
+           if(fragment != null){
+               getSupportFragmentManager()
+                       .beginTransaction()
+//                       .setCustomAnimations(ENTER_ANIM , LEAVE_ANIM)
+                       .replace(R.id.main_activity_fragment_place_holder, fragment)
+                       .addToBackStack(tag)
+                       .commit();
+           }
+       }catch (Exception e){}
     }
 
     public void showFragmentNoAnim(Fragment fragment, String tag, boolean back){
@@ -129,14 +132,14 @@ public abstract class FragmentSwitchActivity extends LocalizedActivity {
             if (back){
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .setCustomAnimations(0 , 0)
-                        .replace(R.id.main_activity_fragment_place_holder, fragment)
+//                        .setCustomAnimations(0 , 0)
+//                        .replace(R.id.main_activity_fragment_place_holder, fragment)
                         .addToBackStack(tag)
                         .commit();
             }else {
                 getSupportFragmentManager()
                         .beginTransaction()
-                        .setCustomAnimations(0 , 0)
+//                        .setCustomAnimations(0 , 0)
                         .replace(R.id.main_activity_fragment_place_holder, fragment)
                         .commit();
             }
@@ -693,8 +696,8 @@ public abstract class FragmentSwitchActivity extends LocalizedActivity {
     public void onBackPressed() {
         super.onBackPressed();
 //        Log.e("fragment" , getSupportFragmentManager().getBackStackEntryAt(getSupportFragmentManager().getBackStackEntryCount()-1).getName() +"");
-//        if (getSupportFragmentManager().getBackStackEntryAt(getSupportFragmentManager().getBackStackEntryCount()-1).getName().equals("no_conn_frag")){
-//            Log.e("fragment" , "no_conn_fragment") ;
+//        if (getSupportFragmentManager().getBackStackEntryCount() > 0){
+//            getSupportFragmentManager().popBackStack();
 //        }
 
     }
@@ -711,6 +714,8 @@ public abstract class FragmentSwitchActivity extends LocalizedActivity {
                 .commit();
 
     }
+
+
 
 
 }

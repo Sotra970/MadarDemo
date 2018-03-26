@@ -178,6 +178,18 @@ public class TimeUtils {
             return  null;
         }
     }
+    public static  String changeTimeFormatFromHmsToHma(String date){
+            Log.e("date" , date) ;
+            SimpleDateFormat hms_format = new SimpleDateFormat("hh:mm:ss" , Locale.ENGLISH) ;
+            SimpleDateFormat hma_format = new SimpleDateFormat("hh:mm aa" , Locale.ENGLISH) ;
+            try {
+                Date hms_data = hms_format.parse(date) ;
+                return   hma_format.format(hms_data) ;
+            } catch (ParseException e) {
+                e.printStackTrace();
+                return  null;
+            }
+        }
 
 
     public static double compare2Dates(Date a , Date b){

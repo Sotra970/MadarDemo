@@ -52,7 +52,7 @@ public class recivedMesseageHandel {
             sendNotification(remoteMessage.getData().get("message") , remoteMessage.getData().get("order_id") ,remoteMessage.getData().get("latlung") );
         }
 
-        if (remoteMessage.getData().get("action").equals("NotifyAllStore")){
+        if (remoteMessage.getData().get("action").contains("NotifyAllStore")){
 
             if (remoteMessage.getData().get("City").equals("0") ){
                 //show all users in this country

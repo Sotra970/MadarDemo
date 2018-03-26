@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.madar.madardemo">
+    <!--<uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />-->
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -108,9 +109,18 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoBar" />
         <activity
+            android:name=".Activity.ShowLocationActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoBar"
-            android:name=".Activity.ShowLocationActivity"></activity>
+            android:theme="@style/AppTheme.NoBar" />
+
+        <service
+            android:name=".SecureJobScheduler.SecureJobService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity
+            android:theme="@style/AppTheme.Transluent"
+            android:name=".SecureJobScheduler.LogoutDialogActivity"></activity>
     </application>
 
 </manifest>

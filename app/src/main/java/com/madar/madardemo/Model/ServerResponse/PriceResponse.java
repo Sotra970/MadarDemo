@@ -20,8 +20,13 @@ public class PriceResponse implements Serializable {
 
 
 
+
+
     public  class PriceModel  {
         public  String  Price ;
+        public  String  Ship_Size ;
+        public  String  Main_Price ;
+        public  String  Discount_Percent ;
 
 
     }

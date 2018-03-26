@@ -30,6 +30,7 @@ import com.madar.madardemo.Model.ServerResponse.UserOrdersResponse;
 import com.madar.madardemo.Model.ServerResponse.UserRegResponse;
 import com.madar.madardemo.Model.ServerResponse.WireTransferSummaryResponse;
 import com.madar.madardemo.Model.ServerResponse.ShowBankListResponse;
+import com.madar.madardemo.Model.isFoundModel;
 
 import retrofit2.Call;
 import retrofit2.http.Body;
@@ -37,7 +38,6 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -123,6 +123,15 @@ public interface ApiInterface {
            @Field("Request") String req,
            @Field("Secure") String Secure
    );
+
+    @FormUrlEncoded
+    @POST("Api.php")
+    Call<ConfirmationResponse> resend_code_phone(
+            @Field("Request") String req,
+            @Field("Secure") String Secure,
+            @Field("Phone") String Phone,
+            @Field("Type") String Type
+    );
 
 
     @POST("Api.php")
@@ -220,7 +229,8 @@ public interface ApiInterface {
             @Query("From") int From,
             @Query("To") String To,
             @Query("Size") int Size,
-            @Query("Car_Type") int Car_Type
+            @Query("Car_Type") int Car_Type,
+            @Query("Secret") String Secret
     );
 
     @POST("Api.php")
@@ -263,6 +273,12 @@ public interface ApiInterface {
 
     @GET("Api.php?Request=UBank")
     Call<ShowBankListResponse> showBanks(
+            @Query("Secure") String secret
+    );
+
+
+    @GET("Api.php?Request=ISFound")
+    Call<isFoundModel> iSFound(
             @Query("Secure") String secret
     );
 

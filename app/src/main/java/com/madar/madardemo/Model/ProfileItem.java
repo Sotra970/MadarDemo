@@ -24,6 +24,7 @@ public class ProfileItem implements Serializable {
     private String CityID;
     private String CityName;
     private String CountryID;
+    private String CountryCode;
     private String CountryName;
     private String Currency_Code;
     private String Currency;
@@ -43,8 +44,13 @@ public class ProfileItem implements Serializable {
     private String Twitter_UID ;
     private String Google_UID ;
 
+    public String getCountryCode() {
+        return CountryCode;
+    }
 
-
+    public void setCountryCode(String countryCode) {
+            CountryCode = countryCode;
+    }
 
     public String getRequest() {
         return Request;

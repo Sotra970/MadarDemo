@@ -120,6 +120,27 @@ public abstract class AddOrderBaseFragment  extends BaseFragment implements Seri
         }
     }
 
+    protected void forcemoveCamera(final LatLng current , int zoom) {
+            CameraPosition cameraPosition = new CameraPosition.Builder()
+                    .target(current)      // Sets the center of the map to Mountain View
+                    .zoom(zoom)                   // Sets the zoom
+//                    .bearing(90)                // Sets the orientation of the camera to east
+//                    .tilt(90)                   // Sets the tilt of the camera to 30 degrees
+                    .build();                   // Creates a CameraPosition from the builder
+            mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition), 3000, new GoogleMap.CancelableCallback() {
+                @Override
+                public void onFinish() {
+
+                }
+
+                @Override
+                public void onCancel() {
+
+                }
+            });
+    }
+
+
     protected void moveCamera(final LatLng current , int zoom) {
         if (!camera_move){
             camera_move = true ;

@@ -255,7 +255,7 @@ public class NotificationActivity extends FragmentSwitchActivity
     }
 
     private void initNotifs(ArrayList<NotificationListItem> notificationItems){
-        // do not call on ui thread
+        // do not isFoundModelCall on ui thread
         if(notificationItems != null && !notificationItems.isEmpty()){
             for (NotificationListItem notificationListItem : notificationItems){
                 notificationListItem.initDate();

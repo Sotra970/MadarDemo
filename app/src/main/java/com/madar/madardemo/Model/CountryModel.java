@@ -9,6 +9,23 @@ import java.io.Serializable;
 public class CountryModel  implements Serializable{
 
     String ID , Name ,Code , Currency_Code , Currency ;
+    String  Phone_Code , Phone_Numbers_Length ;
+
+    public String getPhone_Code() {
+        return Phone_Code;
+    }
+
+    public void setPhone_Code(String phone_Code) {
+        Phone_Code = phone_Code;
+    }
+
+    public String getPhone_Numbers_Length() {
+        return Phone_Numbers_Length;
+    }
+
+    public void setPhone_Numbers_Length(String phone_Numbers_Length) {
+        Phone_Numbers_Length = phone_Numbers_Length;
+    }
 
     public CountryModel(String ID, String name) {
         this.ID = ID;

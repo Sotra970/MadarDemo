@@ -24,7 +24,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="0.5"/>
 
             <android.support.v4.widget.NestedScrollView
                 style="@style/fragment_layout_container_style"
@@ -150,73 +150,6 @@
 
                         </LinearLayout>
 
-                        <!--<LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_vertical"
-                            android:layout_marginTop="4dp"
-                            android:layout_marginBottom="4dp"
-                            >
-
-                            <LinearLayout
-                                android:layout_width="28dp"
-                                android:layout_height="28dp"
-                                android:gravity="center"
-                                android:layout_marginEnd="12dp"
-                                >
-
-                                <ImageView
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
-                                    android:src="@drawable/telephone_fax"
-                                    />
-
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/text_contact_us_fax"
-                                style="@style/text_medium"
-                                android:textColor="@color/app_grey_1"
-                                />
-
-                        </LinearLayout>-->
-
-                       <!-- <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:gravity="center_vertical"
-                            android:layout_marginBottom="4dp"
-                            >
-
-                            <LinearLayout
-                                android:layout_width="28dp"
-                                android:layout_height="28dp"
-                                android:gravity="center"
-                                android:layout_marginEnd="12dp"
-                                >
-
-                                <ImageView
-                                    android:layout_width="24dp"
-                                    android:layout_height="24dp"
-                                    android:src="@drawable/mail"
-                                    />
-
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/text_contact_us_email"
-                                style="@style/text_medium"
-                                android:textColor="@color/app_grey_1"
-                                />
-
-                        </LinearLayout>-->
-
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -241,8 +174,6 @@
                                 android:paddingTop="2dp"
                                 android:paddingBottom="2dp"
                                 android:layout_marginBottom="2dp"
-                                android:layout_marginStart="18dp"
-                                android:layout_marginEnd="18dp"
                                 android:id="@+id/fragment_contact_us_go_to_facebook"
                                 >
 
@@ -257,6 +188,7 @@
                                     android:orientation="vertical">
 
                                     <TextView
+                                        android:textAlignment="viewStart"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="@string/text_our_page_facebook"
@@ -265,12 +197,12 @@
                                         />
 
                                     <TextView
+                                        android:textAlignment="viewStart"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/fragment_contact_us_facebook_link"
-                                        android:maxLines="1"
                                         android:textDirection="rtl"
-                                        android:text="https://www.facebook.com/Madar_Ex-180429922514630"
+                                        android:text="@string/face_link"
                                         />
 
                                 </LinearLayout>
@@ -285,8 +217,6 @@
                                 android:layout_marginBottom="2dp"
                                 android:paddingTop="2dp"
                                 android:paddingBottom="2dp"
-                                android:layout_marginStart="18dp"
-                                android:layout_marginEnd="18dp"
                                 android:id="@+id/fragment_contact_us_go_to_twitter"
                                 >
 
@@ -300,20 +230,20 @@
                                     android:orientation="vertical">
 
                                     <TextView
+                                        android:textAlignment="viewStart"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="@string/text_our_page_twitter"
                                         style="@style/text_medium"
                                         android:textColor="@color/app_grey_1"
-                                        android:textDirection="rtl"
                                         />
 
                                     <TextView
+                                        android:textAlignment="viewStart"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/fragment_contact_us_twitter_link"
-                                        android:maxLines="1"
-                                        android:text="https://twitter.com/Madar_Ex"
+                                        android:text="@string/twitter_link"
                                         />
 
                                 </LinearLayout>
@@ -328,8 +258,6 @@
                                 android:layout_marginBottom="2dp"
                                 android:paddingTop="2dp"
                                 android:paddingBottom="2dp"
-                                android:layout_marginStart="18dp"
-                                android:layout_marginEnd="18dp"
                                 android:id="@+id/fragment_contact_us_go_to_instagram"
                                 >
 
@@ -343,6 +271,7 @@
                                     android:orientation="vertical">
 
                                     <TextView
+                                        android:textAlignment="viewStart"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:text="@string/text_our_page_instagram"
@@ -351,122 +280,17 @@
                                         />
 
                                     <TextView
+                                        android:textAlignment="viewStart"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:id="@+id/fragment_contact_us_instagram_link"
-                                        android:maxLines="1"
-                                        android:text="https://www.instagram.com/Madar_Ex"
+                                        android:text="@string/insta_link"
                                         android:textDirection="rtl"
                                         />
 
                                 </LinearLayout>
 
                             </LinearLayout>
-
-                            <!--<LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:layout_marginTop="2dp"
-                                android:layout_marginBottom="2dp"
-                                android:layout_marginStart="18dp"
-                                android:layout_marginEnd="18dp">
-
-                                <ImageView
-                                    style="@style/contact_us_social_image_view"
-                                    android:src="@drawable/gplus"/>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/text_our_page_gplus"
-                                        style="@style/text_medium"
-                                        android:textColor="@color/app_grey_1"
-                                        />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/fragment_contact_us_gplus_link"/>
-
-                                </LinearLayout>
-                            </LinearLayout>-->
-
-                            <!--<LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:layout_marginTop="2dp"
-                                android:layout_marginBottom="2dp"
-                                android:layout_marginStart="18dp"
-                                android:layout_marginEnd="18dp"
-                                >
-
-                                <ImageView
-                                    style="@style/contact_us_social_image_view"
-                                    android:src="@drawable/linkedin"/>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/text_our_page_linkedin"
-                                        style="@style/text_medium"
-                                        android:textColor="@color/app_grey_1"
-                                        />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/fragment_contact_us_linkedin_link"/>
-
-                                </LinearLayout>
-                            </LinearLayout>-->
-
-                           <!-- <LinearLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:orientation="horizontal"
-                                android:layout_marginTop="2dp"
-                                android:layout_marginBottom="2dp"
-                                android:layout_marginStart="18dp"
-                                android:layout_marginEnd="18dp"
-                                >
-
-                                <ImageView
-                                    style="@style/contact_us_social_image_view"
-                                    android:src="@drawable/youtube"/>
-
-                                <LinearLayout
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:orientation="vertical">
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:text="@string/text_our_page_youtube"
-                                        style="@style/text_medium"
-                                        android:textColor="@color/app_grey_1"
-                                        />
-
-                                    <TextView
-                                        android:layout_width="wrap_content"
-                                        android:layout_height="wrap_content"
-                                        android:id="@+id/fragment_contact_us_youtube_link"/>
-
-                                </LinearLayout>
-                            </LinearLayout>-->
-
                         </LinearLayout>
 
                     </LinearLayout>
@@ -478,7 +302,7 @@
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1"/>
+                android:layout_weight="0.5"/>
 
         </LinearLayout>
 

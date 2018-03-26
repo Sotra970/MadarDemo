@@ -183,13 +183,14 @@ public class ConfirmationMessgaeSentFragment extends BaseFragment implements Vie
     }
 
     private void confirmCode(){
-        showLoading(true);
+
         // confirm
         final String code ;
         if (!Validation.isEditTextEmpty(code_input))
             code = code_input.getText().toString();
         else  return;
 
+        showLoading(true);
         Call<ConfirmationResponse> confirmationResponseCall = Injector.Api().check_code(
                 "ValidCode",code , profileItem.getSecret()
         );
@@ -243,10 +244,11 @@ public class ConfirmationMessgaeSentFragment extends BaseFragment implements Vie
 
     private void resendCode(){
         //resend
-        showLoading(true);
         // confirm
            code_input.setError(null);
         code_input.setText("");
+
+        showLoading(true);
 
         Call<ConfirmationResponse> confirmationResponseCall = Injector.Api().resend_code(
                 "ResendVerif",
@@ -285,7 +287,7 @@ public class ConfirmationMessgaeSentFragment extends BaseFragment implements Vie
 
     @OnClick(R.id.do_u_have_account)
     void do_u_have_account(){
-        getActivity().onBackPressed();
+        cancel();
     }
 
 

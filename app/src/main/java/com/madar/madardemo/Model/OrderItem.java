@@ -1,5 +1,7 @@
 package com.madar.madardemo.Model;
 
+import android.util.Log;
+
 import com.google.gson.annotations.SerializedName;
 import com.madar.madardemo.Util.TimeUtils;
 
@@ -332,7 +334,10 @@ public class OrderItem  implements Serializable{
     }
 
     public void initDate(){
+        Log.e("PackageDetails" , "ORDER MODEL " + "initDate : " +  Date+"") ;
+
         if(Date != null && !Date.isEmpty()){
+
             parsedDate =
                     TimeUtils.getDayOfMonth(
                             Date,
@@ -394,5 +399,48 @@ public class OrderItem  implements Serializable{
 
     public void setNote(String note) {
         this.note = note;
+    }
+
+
+    @Override
+    public String toString() {
+        return "OrderItem{" +
+                "Title='" + Title + '\'' +
+                ", Time_From='" + Time_From + '\'' +
+                ", Time_To='" + Time_To + '\'' +
+                ", ID='" + ID + '\'' +
+                ", Deliver_Place='" + Deliver_Place + '\'' +
+                ", Recipient_Place='" + Recipient_Place + '\'' +
+                ", From_City_Name='" + From_City_Name + '\'' +
+                ", From_City_No='" + From_City_No + '\'' +
+                ", From_District='" + From_District + '\'' +
+                ", To_City_Name='" + To_City_Name + '\'' +
+                ", To_City_No='" + To_City_No + '\'' +
+                ", Place_Detail='" + Place_Detail + '\'' +
+                ", To_District='" + To_District + '\'' +
+                ", Customer_Name='" + Customer_Name + '\'' +
+                ", Customer_ID='" + Customer_ID + '\'' +
+                ", Sender_Num='" + Sender_Num + '\'' +
+                ", Mobile_Num='" + Mobile_Num + '\'' +
+                ", Receiver_Name='" + Receiver_Name + '\'' +
+                ", Date='" + Date + '\'' +
+                ", Size='" + Size + '\'' +
+                ", Ship_Price='" + Ship_Price + '\'' +
+                ", Good_Price='" + Good_Price + '\'' +
+                ", Payment_Method_ID='" + Payment_Method_ID + '\'' +
+                ", Payment_Method_Name='" + Payment_Method_Name + '\'' +
+                ", Ship_Type='" + Ship_Type + '\'' +
+                ", Case_ID='" + Case_ID + '\'' +
+                ", Case_Name='" + Case_Name + '\'' +
+                ", Case_Description='" + Case_Description + '\'' +
+                ", Case_Img='" + Case_Img + '\'' +
+                ", Contact_Before_Arrive='" + Contact_Before_Arrive + '\'' +
+                ", Pack_Good_State='" + Pack_Good_State + '\'' +
+                ", Packages_Numbers='" + Packages_Numbers + '\'' +
+                ", Type='" + Type + '\'' +
+                ", Pics=" + Pics +
+                ", parsedDate='" + parsedDate + '\'' +
+                ", note='" + note + '\'' +
+                '}';
     }
 }
