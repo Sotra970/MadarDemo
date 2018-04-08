@@ -330,18 +330,4 @@ public class LoginFragment extends BaseFragment implements View.OnClickListener,
         showFragment(ForgetPasswordFragment.getInstance() , true);
     }
 
-
-//    @Override
-//    public void showLoading(final boolean show) {
-//        try {
-//            int shortAnimTime = getResources().getInteger(android.R.integer.config_shortAnimTime);
-//
-//            containerHolder.setVisibility(show ? View.GONE : View.VISIBLE);
-//
-//            progrssView.setVisibility(show ? View.VISIBLE : View.GONE);
-//
-//        }catch (Exception e){
-//            e.printStackTrace();
-//        }
-//    }
 }
